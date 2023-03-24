@@ -13,7 +13,7 @@ namespace Models
 
         }
         public Guid Id { get; set; }
-        public Guid Health_Id { get; set; }
+        public string Health_Id { get; set; }
         public string Appointment_Id { get; set; }
         public string Drugs { get; set; }
     }
