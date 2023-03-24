@@ -1,0 +1,491 @@
+{
+  "Routes": [
+
+    //doctor api
+    {
+      "UpstreamPathTemplate": "/apigateway/GetAllDoctor",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Doctor/GetAllDoctor",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7255
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/GetById/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Doctor/byId?id={id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7255
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/DoctorByEmail/{email}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Doctor/GetByEmail?e={email}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7255
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/AddDoctor",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/Doctor/addDoctor",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7255
+        }
+      ]
+    },
+
+    //nurse api
+    {
+      "UpstreamPathTemplate": "/apigateway/AddNurse",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/Nurse/AddNurse",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7255
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/GetAllNurse",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Nurse/getAllNurse",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7255
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/GetNurseByEmail/{email}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Nurse/GetByEmail?e={email}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7255
+        }
+      ]
+    },
+
+
+    //login api
+    {
+      "UpstreamPathTemplate": "/apigateway/LoginAdd",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/PatientLogin/Add",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44385
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/LoginGet/{email}/{password}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/PatientLogin/Get?email={email}&password={password}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44385
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/LoginDelete/{email}",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "DownstreamPathTemplate": "/api/PatientLogin/Delete/{email}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44385
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/LoginUpdate",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "DownstreamPathTemplate": "/api/PatientLogin/Update",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44385
+        }
+      ]
+    },
+
+    //availablity api
+    {
+      "UpstreamPathTemplate": "/apigateway/GetScheduleByDay/{day}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/PhysicianAvailability/GetSchedule?day={day}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44337
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/AddDoctorSchedule",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/PhysicianAvailability/AddSchedule",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44337
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/UpdateAllSchedule/{day}",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "DownstreamPathTemplate": "/api/PhysicianAvailability/UpdateAllSchedules?day={day}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44337
+        }
+      ]
+    },
+
+    //patient info api
+    {
+      "UpstreamPathTemplate": "/apigateway/GetAllPatients",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/PatientInfo/GetallPatientInfo",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7112
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/PatientByEmail/{Email}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/PatientInfo/GetPatientInfobyemail/{Email}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7112
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/AddPatient",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/PatientInfo/AddnewPatientinfo",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7112
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/UpdatePatient/{Pat_id}",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "DownstreamPathTemplate": "/api/PatientInfo/UpdatePatientinfo?Pat_id={Pat_id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7112
+        }
+      ]
+    },
+
+    //appointment api
+    {
+      "UpstreamPathTemplate": "/apigateway/AddNewAppointment",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/Appointment/AddAppointmentByPatient",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7155
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/UpdateAppointmentStatusByDoctor/{appointment_id}/{status}",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "DownstreamPathTemplate": "/api/Appointment/UpdateStatusByDoctor?appointment_id={appointment_id}&status={status}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7155
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/UpdateAppointmentNurseId/{appointment_id}/{nurse_id}",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "DownstreamPathTemplate": "/api/Appointment/UpdateNurseIdByNurse?appointment_id={appointment_id}&nurse_id={nurse_id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7155
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/GetAppointmentsByDocId/{doctor_id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Appointment/GetAppointmentsByDoctorId?doctor_id={doctor_id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7155
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/GetAppointmentsByStatus/{status}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Appointment/GetAppointmentsByStatus?status={status}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7155
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/GetAcceptedAppointments",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Appointment/GetAppointmentsByStatusOne",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7155
+        }
+      ]
+    },
+
+    //allergy api
+    {
+      "UpstreamPathTemplate": "/apigateway/GetAllAllergy",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Allergy/GetAllergies",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7118
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/AddNewAllergy",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/Allergy/AddAllergy",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7118
+        }
+      ]
+    },
+
+
+
+    //patient health record api - allergy
+    {
+      "UpstreamPathTemplate": "/apigateway/AddPatientAllergy",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/PatientAllergy/AddAllergyRecords",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5010
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/UpdatePatientAllergy/{id}",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "DownstreamPathTemplate": "/api/PatientAllergy/modifyAllergy/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5010
+        }
+      ]
+    },
+
+    //medication
+    {
+      "UpstreamPathTemplate": "/apigateway/AddPatientDrug",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/Medication/AddMedicalRecords",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5010
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/UpdatePatientDrug/{id}",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "DownstreamPathTemplate": "/api/Medication/updatemedication/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5010
+        }
+      ]
+    },
+
+    //patient basic record
+    {
+      "UpstreamPathTemplate": "/apigateway/GetPatientRecord/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/PBRecord/GetPRBy/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5010
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/UpdatePatientRecord/{id}",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "DownstreamPathTemplate": "/api/PBRecord/modify/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5010
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/AddPatientRecord",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/PBRecord/AddPBRecords",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5010
+        }
+      ]
+    },
+
+    //patient health record
+    {
+      "UpstreamPathTemplate": "/apigateway/GetPatientHealthRecord/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/PHRecord/GetHR/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5010
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/AddPatientHealthRecord",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/PHRecord/AddPHRecords",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5010
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/UpdatePatientHealthRecord/{id}",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "DownstreamPathTemplate": "/api/PHRecord/updateHr/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5010
+        }
+      ]
+    },
+
+    // patient tests
+    //"PTest"
+    {
+      "UpstreamPathTemplate": "/apigateway/AddPatientTests",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/PTest/AddTestRecords",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5010
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/UpdatePatientTests/{id}",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "DownstreamPathTemplate": "/api/PTest/modifyTest/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5010
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5103"
+  }
+}
