@@ -46,7 +46,7 @@ namespace Service.Controllers
             try
             {
                 var search = _logic.GetByHealthID(id);
-                if (search != null)
+                if (search.Count() > 0)
                     return Ok(search);
                 else
                     return NotFound($"Records with HealthId {id} not available, please try with different Id");
