@@ -54,7 +54,7 @@ namespace EntityFrame
             var padetails = _PHdbcontext.PatientAllergies;
 
             var alldetails = (from b in brdetails
-                              join p in padetails on b.PatientId equals p.HealthId
+                              join p in padetails on b.AppointmentId equals p.AppointmentId
                               select new AllBasicDetails()
                               {
                                   Id = (Guid)b.Id,
