@@ -1,5 +1,5 @@
 ﻿using DataLogic;
-using DataLogic.Entities;
+using PIDataLogic.Entities;
 using Models;
 
 namespace BuisnessLogic
@@ -13,9 +13,9 @@ namespace BuisnessLogic
             _repo = repo;
         }
 
-        public void AddnewPatientInfo(Patientinfo patientInfo)
+        public string AddnewPatientInfo(Patientinfo patientInfo)
         {
-            _repo.AddnewPatientInfo(patientInfo);
+            return _repo.AddnewPatientInfo(patientInfo);
         }
 
         public IEnumerable<PatientInfo> GetallPatientinfos()
