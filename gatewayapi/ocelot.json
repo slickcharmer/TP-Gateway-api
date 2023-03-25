@@ -149,7 +149,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 44337
+          "Port": 7242
         }
       ]
     },
@@ -161,7 +161,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 44337
+          "Port": 7242
         }
       ]
     },
@@ -173,7 +173,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 44337
+          "Port": 7242
         }
       ]
     },

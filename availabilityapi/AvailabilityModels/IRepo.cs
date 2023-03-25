@@ -10,7 +10,7 @@ namespace Models
     {
         public void Add(T doctorSchedule);
 
-        public void Update(T doctorSchedule);
+        public void Update(IEnumerable<T> doctorSchedule);
 
         public IEnumerable<T> Get();
     }

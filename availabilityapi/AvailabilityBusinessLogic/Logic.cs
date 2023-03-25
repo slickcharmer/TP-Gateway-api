@@ -82,9 +82,8 @@ namespace BusinessLogic
                     default:
                         break;
                 }
-
-                repo.Update(oldSchedule);
             }
+            repo.Update(oldDoctorSchedules);
             return oldDoctorSchedules;
         }
     }

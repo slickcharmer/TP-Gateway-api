@@ -31,14 +31,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvailabilityModels", "avail
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentApi", "availabilityapi\FluentApi\FluentApi.csproj", "{FAE97211-11B8-493F-B2C2-21B5BDD5A0FA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Capstoneproj_patientinfo", "patientInfoapi\Capstoneproj_patientinfo\Capstoneproj_patientinfo.csproj", "{87392FD4-0A9E-4DAD-9103-2FDAA0BA71E9}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PIBuisnessLogic", "patientInfoapi\PIBuisnessLogic\PIBuisnessLogic.csproj", "{D4595067-473A-4770-B7A7-8537894FC461}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PIDataLogic", "patientInfoapi\PIDataLogic\PIDataLogic.csproj", "{9353CAB3-1469-48FF-B13A-A20E7F4A35A6}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PIModels", "patientInfoapi\PIModels\PIModels.csproj", "{E67FC277-61D2-4CE9-B76B-D8E818DDFDC3}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APBusinessLogic", "appointmentapi\APBusinessLogic\APBusinessLogic.csproj", "{48955CA5-970A-46B1-A047-25233A1A1858}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APDataLayer", "appointmentapi\APDataLayer\APDataLayer.csproj", "{1FD55DBF-030E-4D8A-8B1E-A53800656A89}"
@@ -62,6 +54,14 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PHRModels", "patienthealthrecordapi\PHRModels\PHRModels.csproj", "{0515C824-680B-428A-B95A-B591D3108643}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PHRservice", "patienthealthrecordapi\PHRservice\PHRservice.csproj", "{E65C2642-2A90-41D7-A4D8-5B932004448C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Capstoneproj_patientinfo", "patientInfoapi\Capstoneproj_patientinfo\Capstoneproj_patientinfo.csproj", "{0C033CE3-9A7D-47A6-BBCC-308E115D54C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PIBuisnessLogic", "patientInfoapi\PIBuisnessLogic\PIBuisnessLogic.csproj", "{816661F4-2DAA-46C4-9EF0-00765C050E10}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PIDataLogic", "patientInfoapi\PIDataLogic\PIDataLogic.csproj", "{30855B40-2A16-445F-8815-9B1C65885684}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PIModels", "patientInfoapi\PIModels\PIModels.csproj", "{EA91CE36-390E-4DD5-9060-6D4612415D34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -125,22 +125,6 @@ Global
 		{FAE97211-11B8-493F-B2C2-21B5BDD5A0FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAE97211-11B8-493F-B2C2-21B5BDD5A0FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAE97211-11B8-493F-B2C2-21B5BDD5A0FA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{87392FD4-0A9E-4DAD-9103-2FDAA0BA71E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{87392FD4-0A9E-4DAD-9103-2FDAA0BA71E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{87392FD4-0A9E-4DAD-9103-2FDAA0BA71E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{87392FD4-0A9E-4DAD-9103-2FDAA0BA71E9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D4595067-473A-4770-B7A7-8537894FC461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D4595067-473A-4770-B7A7-8537894FC461}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D4595067-473A-4770-B7A7-8537894FC461}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D4595067-473A-4770-B7A7-8537894FC461}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9353CAB3-1469-48FF-B13A-A20E7F4A35A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9353CAB3-1469-48FF-B13A-A20E7F4A35A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9353CAB3-1469-48FF-B13A-A20E7F4A35A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9353CAB3-1469-48FF-B13A-A20E7F4A35A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E67FC277-61D2-4CE9-B76B-D8E818DDFDC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E67FC277-61D2-4CE9-B76B-D8E818DDFDC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E67FC277-61D2-4CE9-B76B-D8E818DDFDC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E67FC277-61D2-4CE9-B76B-D8E818DDFDC3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{48955CA5-970A-46B1-A047-25233A1A1858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{48955CA5-970A-46B1-A047-25233A1A1858}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48955CA5-970A-46B1-A047-25233A1A1858}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -189,6 +173,22 @@ Global
 		{E65C2642-2A90-41D7-A4D8-5B932004448C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E65C2642-2A90-41D7-A4D8-5B932004448C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E65C2642-2A90-41D7-A4D8-5B932004448C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C033CE3-9A7D-47A6-BBCC-308E115D54C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C033CE3-9A7D-47A6-BBCC-308E115D54C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C033CE3-9A7D-47A6-BBCC-308E115D54C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C033CE3-9A7D-47A6-BBCC-308E115D54C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{816661F4-2DAA-46C4-9EF0-00765C050E10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{816661F4-2DAA-46C4-9EF0-00765C050E10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{816661F4-2DAA-46C4-9EF0-00765C050E10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{816661F4-2DAA-46C4-9EF0-00765C050E10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30855B40-2A16-445F-8815-9B1C65885684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30855B40-2A16-445F-8815-9B1C65885684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30855B40-2A16-445F-8815-9B1C65885684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30855B40-2A16-445F-8815-9B1C65885684}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA91CE36-390E-4DD5-9060-6D4612415D34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA91CE36-390E-4DD5-9060-6D4612415D34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA91CE36-390E-4DD5-9060-6D4612415D34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA91CE36-390E-4DD5-9060-6D4612415D34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
