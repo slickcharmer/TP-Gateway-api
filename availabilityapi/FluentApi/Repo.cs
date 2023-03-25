@@ -1,4 +1,5 @@
 ﻿using FluentApi.Entities;
+using Microsoft.EntityFrameworkCore;
 using Model = Models;
 
 namespace FluentApi
@@ -18,9 +19,10 @@ namespace FluentApi
             context.SaveChanges();
         }
 
-        public void Update(DoctorSchedule doctorSchedule)
-        {
-            context.DoctorSchedules.Update(doctorSchedule);
+        public void Update(IEnumerable<DoctorSchedule> doctorSchedule)
+        {/*
+            context.DoctorSchedules.Update(doctorSchedule);*/
+            context.DoctorSchedules.UpdateRange(doctorSchedule);
             context.SaveChanges();
         }
 
