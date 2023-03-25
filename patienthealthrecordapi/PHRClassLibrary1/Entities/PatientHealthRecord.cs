@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EntityFrame.Entities;
+namespace PHREntityFrame.Entities;
 
 public partial class PatientHealthRecord
 {
-    public Guid Id { get; set; }
+    public Guid? Id { get; set; }
 
     public DateTime? DateTime { get; set; }
 
-    public string? PatientId { get; set; }
+    public string PatientId { get; set; } = null!;
 
     public string? DoctorId { get; set; }
 

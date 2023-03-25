@@ -52,7 +52,7 @@ namespace BusinessLogic
         /// <param name="id"></param>
         /// <returns></returns>
 
-        EntityFrame.AllBasicDetails GetById(string id);
+        IEnumerable<EntityFrame.AllBasicDetails> GetById(string id);
         /// <summary>
         /// Get All Patients Health Details
         /// </summary>
@@ -65,7 +65,7 @@ namespace BusinessLogic
         /// <param name="id"></param>
         /// <returns></returns>
 
-        EntityFrame.AllHealthDetails GetByHealthID(string id);
+        IEnumerable<EntityFrame.AllHealthDetails> GetByHealthID(string id);
 
         /// <summary>
         /// Method to Update 

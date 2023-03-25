@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
+using PHREntityFrame.Entities;
 
 namespace BusinessLogic
 {
     public class Mapper
     {
-        public static Models.Patient_Basic_Record PbMap(EntityFrame.Entities.PatientBasicRecord r)
+        public static Models.Patient_Basic_Record PbMap(PatientBasicRecord r)
         {
             return new Models.Patient_Basic_Record()
             {
@@ -29,9 +30,9 @@ namespace BusinessLogic
             };
         }
 
-        public static EntityFrame.Entities.PatientBasicRecord PbMap(Models.Patient_Basic_Record r)
+        public static PatientBasicRecord PbMap(Models.Patient_Basic_Record r)
         {
-            return new EntityFrame.Entities.PatientBasicRecord()
+            return new PatientBasicRecord()
             {
                 Id = r.Id,
                 DateTime = r.Date_Time,
@@ -48,11 +49,11 @@ namespace BusinessLogic
             };
         }
 
-        public static Models.Patient_Health_Record HrMap(EntityFrame.Entities.PatientHealthRecord hr)
+        public static Models.Patient_Health_Record HrMap(PatientHealthRecord hr)
         {
             return new Models.Patient_Health_Record()
             {
-                Id = hr.Id,
+                Id = (Guid)hr.Id,
                 Date_Time = (DateTime)hr.DateTime,
                 Patient_Id = hr.PatientId,
                 Doctor_Id = hr.DoctorId,
@@ -61,9 +62,9 @@ namespace BusinessLogic
             };
         }
 
-        public static EntityFrame.Entities.PatientHealthRecord HrMap(Models.Patient_Health_Record hr)
+        public static PatientHealthRecord HrMap(Models.Patient_Health_Record hr)
         {
-            return new EntityFrame.Entities.PatientHealthRecord()
+            return new PatientHealthRecord()
             {
                 Id = hr.Id,
                 DateTime = hr.Date_Time,
@@ -73,20 +74,20 @@ namespace BusinessLogic
                 Conclusion = hr.Conclusion
             };
         }
-        public static Models.Patient_Medication MrMap(EntityFrame.Entities.PatientMedication mr)
+        public static Models.Patient_Medication MrMap(PatientMedication mr)
         {
             return new Models.Patient_Medication()
             {
                 Id = mr.Id,
-                Health_Id = (Guid)mr.HealthId,
+                Health_Id = mr.HealthId,
                 Appointment_Id = mr.AppointmentId,
                 Drugs = mr.Drug
             };
         }
 
-        public static EntityFrame.Entities.PatientMedication MrMap(Models.Patient_Medication mr)
+        public static PatientMedication MrMap(Models.Patient_Medication mr)
         {
-            return new EntityFrame.Entities.PatientMedication()
+            return new PatientMedication()
             {
                 Id = mr.Id,
                 HealthId = mr.Health_Id,
@@ -94,20 +95,20 @@ namespace BusinessLogic
                 Drug = mr.Drugs
             };
         }
-        public static Models.Patient_Test TMap(EntityFrame.Entities.PatientTest tm)
+        public static Models.Patient_Test TMap(PatientTest tm)
         {
             return new Models.Patient_Test()
             {
                 Id = tm.Id,
-                Health_Id = (Guid)tm.HealthId,
+                Health_Id = tm.HealthId,
                 Appointment_Id = tm.AppointmentId,
                 Test = tm.Test,
                 Result = tm.Result
             };
         }
-        public static EntityFrame.Entities.PatientTest TMap(Models.Patient_Test tm)
+        public static PatientTest TMap(Models.Patient_Test tm)
         {
-            return new EntityFrame.Entities.PatientTest
+            return new PatientTest
             {
                 Id = tm.Id,
                 HealthId = tm.Health_Id,
@@ -116,7 +117,7 @@ namespace BusinessLogic
                 Result = tm.Result
             };
         }
-        public static Models.Patient_Allergy AMap(EntityFrame.Entities.PatientAllergy ar)
+        public static Models.Patient_Allergy AMap(PatientAllergy ar)
         {
             return new Models.Patient_Allergy()
             {
@@ -127,9 +128,9 @@ namespace BusinessLogic
             };
         }
 
-        public static EntityFrame.Entities.PatientAllergy AMap(Models.Patient_Allergy ar)
+        public static PatientAllergy AMap(Models.Patient_Allergy ar)
         {
-            return new EntityFrame.Entities.PatientAllergy()
+            return new PatientAllergy()
             {
                 Id = ar.Id,
                 HealthId = ar.Health_Id,
@@ -138,26 +139,26 @@ namespace BusinessLogic
             };
         }
 
-        public static IEnumerable<Models.Patient_Basic_Record> PbMap(IEnumerable<EntityFrame.Entities.PatientBasicRecord> records)
+        public static IEnumerable<Models.Patient_Basic_Record> PbMap(IEnumerable<PatientBasicRecord> records)
         {
             return records.Select(PbMap);
         }
 
-        public static IEnumerable<Models.Patient_Health_Record> HrMap(IEnumerable<EntityFrame.Entities.PatientHealthRecord> hr)
+        public static IEnumerable<Models.Patient_Health_Record> HrMap(IEnumerable<PatientHealthRecord> hr)
         {
             return hr.Select(HrMap);
         }
 
-        public static IEnumerable<Models.Patient_Medication> MrMap(IEnumerable<EntityFrame.Entities.PatientMedication> mr)
+        public static IEnumerable<Models.Patient_Medication> MrMap(IEnumerable<PatientMedication> mr)
         {
             return mr.Select(MrMap);
         }
 
-        public static IEnumerable<Models.Patient_Test> TMap(IEnumerable<EntityFrame.Entities.PatientTest> tm)
+        public static IEnumerable<Models.Patient_Test> TMap(IEnumerable<PatientTest> tm)
         {
             return tm.Select(TMap);
         }
-        public static IEnumerable<Models.Patient_Allergy> AMap(IEnumerable<EntityFrame.Entities.PatientAllergy> ar)
+        public static IEnumerable<Models.Patient_Allergy> AMap(IEnumerable<PatientAllergy> ar)
         {
             return ar.Select(AMap);
         }

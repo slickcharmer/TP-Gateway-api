@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EntityFrame.Entities;
+namespace PHREntityFrame.Entities;
 
 public partial class PatientBasicRecord
 {
@@ -9,11 +9,11 @@ public partial class PatientBasicRecord
 
     public DateTime? DateTime { get; set; }
 
-    public string PatientId { get; set; } = null!;
+    public string? PatientId { get; set; }
 
     public string? NurseId { get; set; }
 
-    public string? AppointmentId { get; set; }
+    public string AppointmentId { get; set; } = null!;
 
     public string? Bp { get; set; }
 

@@ -1,4 +1,5 @@
-﻿using EntityFrame.Entities;
+﻿using EntityFrame;
+using PHREntityFrame.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,7 +54,7 @@ namespace EntityFrame
             var padetails = _PHdbcontext.PatientAllergies;
 
             var alldetails = (from b in brdetails
-                              join p in padetails on b.PatientId equals p.HealthId
+                              join p in padetails on b.AppointmentId equals p.AppointmentId
                               select new AllBasicDetails()
                               {
                                   Id = (Guid)b.Id,
@@ -82,15 +83,15 @@ namespace EntityFrame
             var pt = _PHdbcontext.PatientTests;
 
             var alldata = (from h in phr
-                           join m in pm on h.Id equals m.HealthId
-                           join t in pt on h.Id equals t.HealthId
+                           join m in pm on h.PatientId equals m.HealthId
+                           join t in pt on h.PatientId equals t.HealthId
                            select new AllHealthDetails()
                            {
-                               Id = h.Id,
+                               Id = (Guid)h.Id,
                                Date_Time = (DateTime)h.DateTime,
                                Patient_Id = h.PatientId,
                                Doctor_Id = h.DoctorId,
-                               Health_Id = (Guid)m.HealthId,
+                               Health_Id = m.HealthId,
                                AppointmentId = h.AppointmentId,
                                Drugs = m.Drug,
                                Test = t.Test,
@@ -100,12 +101,12 @@ namespace EntityFrame
             return alldata.ToList();
         }
 
-        public List<Entities.PatientBasicRecord> GetAllBasicRecords()
+        public List<PatientBasicRecord> GetAllBasicRecords()
         {
             return _PHdbcontext.PatientBasicRecords.ToList();
         }
 
-        public Entities.PatientBasicRecord UpdateBasicRecord(Entities.PatientBasicRecord br)
+        public PatientBasicRecord UpdateBasicRecord(PatientBasicRecord br)
         {
             _PHdbcontext.PatientBasicRecords.Update(br);
             _PHdbcontext.SaveChanges();
