@@ -91,14 +91,10 @@ namespace DNApi.Controllers
             {
                 doctor.Id = Guid.NewGuid();
                 string res = _logic.AddDoctor(doctor);
-                if (res != "1")
-                {
-                    return BadRequest();
-                }
-                else
-                {
-                    return Created("added", doctor);
-                }
+                if (res == "-1") return BadRequest("-1");
+                else if (res == "-2") return BadRequest("-2");
+                else if (res == "1") return Created("added", doctor);
+                else return BadRequest();
             }
             catch (Exception e)
             {

@@ -46,14 +46,10 @@ namespace DNApi.Controllers
             {
                 nurse.Id = Guid.NewGuid();
                 string res = _logic.AddNurse(nurse);
-                if (res != "1")
-                {
-                    return BadRequest();
-                }
-                else
-                {
-                    return Created("added", nurse);
-                }
+                if (res == "-1") return BadRequest("-1");
+                else if (res == "-2") return BadRequest("-2");
+                else if(res == "1") return Created("added", nurse);
+                else return BadRequest();
             }
             catch (Exception e)
             {
