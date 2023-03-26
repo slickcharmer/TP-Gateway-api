@@ -43,6 +43,7 @@ namespace DataLogic
                     AdressLine = pr.AdressLine,
                     City = pr.City,
                     State  = pr.State,
+                    Created = pr.Created,
                 }
                 
                 );
@@ -67,6 +68,7 @@ namespace DataLogic
                     AdressLine = pr.AdressLine,
                     City = pr.City,
                     State = pr.State,
+                    Created = pr.Created
                 }
 
                 );
@@ -108,6 +110,10 @@ namespace DataLogic
                 if ((patientinfo.City != null && patientinfo.City != "string") && patient.City != patientinfo.City)
                 {
                     patient.City = patientinfo.City;
+                }
+                if ((patientinfo.Created != null && patientinfo.Created != "string") && patient.Created != patientinfo.Created)
+                {
+                    patient.Created = patientinfo.Created;
                 }
             }
              _context.Patientinfos.Update(patient);
