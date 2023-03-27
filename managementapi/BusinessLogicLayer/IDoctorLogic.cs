@@ -12,5 +12,7 @@ namespace BusinessLogicLayer
         IEnumerable<DataLayer.Entities.Doctor> GetById(Guid id);
         DataLayer.Entities.Doctor GetByEmail(string email);
         IEnumerable<DataLayer.Entities.Doctor> GetAll();
+
+        string DeleteDoctor(string email);
     }
 }

@@ -12,5 +12,6 @@ namespace DataLayer
         IEnumerable<DataLayer.Entities.Doctor> GetDoctorById(Guid id);
         DataLayer.Entities.Doctor GetDoctorByEmail(string email);
         IEnumerable<DataLayer.Entities.Doctor> GetAllDoctors();
+        string Delete(string email);
     }
 }
