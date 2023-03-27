@@ -23,6 +23,7 @@ namespace BuisnessLogic
             AdressLine = patientInfo.AdressLine, 
             State= patientInfo.State,   
             City = patientInfo.City,
+            Created = patientInfo.Created,
             };
         }
          public Patientinfo PatientInfo(PatientInfo patientInfo) {
@@ -37,6 +38,7 @@ namespace BuisnessLogic
             AdressLine = patientInfo.AdressLine, 
             State= patientInfo.State,
             City = patientInfo.City,
+            Created = patientInfo.Created,
             };
         }
     }

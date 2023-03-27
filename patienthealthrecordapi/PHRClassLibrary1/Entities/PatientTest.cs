@@ -15,5 +15,5 @@ public partial class PatientTest
 
     public string? Result { get; set; }
 
-    public virtual PatientHealthRecord? Health { get; set; }
+    public virtual PatientHealthRecord? Appointment { get; set; }
 }

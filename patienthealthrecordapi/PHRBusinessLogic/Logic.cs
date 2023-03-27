@@ -59,13 +59,13 @@ namespace BusinessLogic
         public Patient_Basic_Record UpdateBR(string id, Patient_Basic_Record record)
         {
             var s = (from r in _repo.GetAllBasicRecords()
-                     where r.PatientId == id
+                     where r.AppointmentId == id
                      select r).FirstOrDefault();
             if (s != null)
             {
                 s.DateTime = record.Date_Time;
                 s.NurseId = record.Nurse_Id;
-                s.AppointmentId = record.Appointment_Id;
+                s.PatientId = record.Patient_Id;
                 s.Bp = record.Bp;
                 s.HeartRate = record.Heart_Rate;
                 s.SpO2 = record.SpO2;
@@ -86,12 +86,12 @@ namespace BusinessLogic
         public Models.Patient_Allergy UpdatePA(string id, Patient_Allergy record)
         {
             var s = (from r in _repo.GetAllAllergy()
-                     where r.HealthId == id
+                     where r.AppointmentId == id
                      select r).FirstOrDefault();
             if (s != null)
             {
                 s.Allergy = record.Allergy;
-                s.AppointmentId = record.Appointment_Id;
+                s.HealthId = record.Health_Id;
 
                 s = _repo.UpdateAllergy(s);
             }
@@ -111,7 +111,7 @@ namespace BusinessLogic
             {
                 s.DateTime = record.Date_Time;
                 s.DoctorId = record.Doctor_Id;
-                s.AppointmentId = record.Appointment_Id;
+                s.PatientId = record.Patient_Id;
                 s.Conclusion = record.Conclusion;
 
                 s = _repo.UpdateHealthRecord(s);
@@ -126,16 +126,16 @@ namespace BusinessLogic
         public Patient_Medication UpdateMedicalReport(string id, Patient_Medication record)
         {
             var z = (from r in _repo.GetAllHealthRecords()
-                     where r.PatientId == id
+                     where r.AppointmentId == id
                      select r).FirstOrDefault();
 
             var s = (from r in _repo.GetAllMedication()
-                     where r.HealthId == z.PatientId
+                     where r.AppointmentId == z.AppointmentId
                      select r).FirstOrDefault();
             if (s != null)
             {
                 s.Drug = record.Drugs;
-                s.AppointmentId = record.Appointment_Id;
+                s.HealthId = record.Health_Id;
 
                 s = _repo.UpdateMedication(s);
             }
@@ -149,16 +149,16 @@ namespace BusinessLogic
         public Patient_Test UpdatePatientTest(string id, Patient_Test record)
         {
             var z = (from r in _repo.GetAllHealthRecords()
-                     where r.PatientId == id
+                     where r.AppointmentId == id
                      select r).FirstOrDefault();
             var s = (from r in _repo.GetAllTestRecords()
-                     where r.HealthId == z.PatientId
+                     where r.AppointmentId == z.AppointmentId
                      select r).FirstOrDefault();
             if (s != null)
             {
                 s.Test = record.Test;
                 s.Result = record.Result;
-                s.AppointmentId = record.Appointment_Id;
+                s.HealthId = record.Health_Id;
 
                 s = _repo.UpdateTest(s);
             }

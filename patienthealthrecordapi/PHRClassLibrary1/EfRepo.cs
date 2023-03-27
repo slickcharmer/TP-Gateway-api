@@ -83,8 +83,8 @@ namespace EntityFrame
             var pt = _PHdbcontext.PatientTests;
 
             var alldata = (from h in phr
-                           join m in pm on h.PatientId equals m.HealthId
-                           join t in pt on h.PatientId equals t.HealthId
+                           join m in pm on h.AppointmentId equals m.AppointmentId
+                           join t in pt on h.AppointmentId equals t.AppointmentId
                            select new AllHealthDetails()
                            {
                                Id = (Guid)h.Id,

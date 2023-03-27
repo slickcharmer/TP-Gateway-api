@@ -41,6 +41,10 @@ public partial class PatientInfoServiceDbContext : DbContext
                 .HasMaxLength(25)
                 .IsUnicode(false)
                 .HasColumnName("city");
+            entity.Property(e => e.Created)
+                .HasMaxLength(15)
+                .IsUnicode(false)
+                .HasColumnName("created");
             entity.Property(e => e.Email)
                 .HasMaxLength(50)
                 .IsUnicode(false)
