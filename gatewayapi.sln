@@ -71,7 +71,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuditModels", "auditapi\Aud
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuditService", "auditapi\AuditService\AuditService.csproj", "{AD6DBA8C-62F7-428E-B530-C2A1F7053C0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllergyApiTest", "allergyapi\AllergyApiTest\AllergyApiTest.csproj", "{5D985EF0-BAA9-43A7-BB7E-4CB9095A165D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllergyApiTest", "allergyapi\AllergyApiTest\AllergyApiTest.csproj", "{5D985EF0-BAA9-43A7-BB7E-4CB9095A165D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PHRServiceTest", "PHRServiceTest\PHRServiceTest.csproj", "{6C30B421-1B06-4BD7-8503-0CF0E6810682}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -219,6 +221,10 @@ Global
 		{5D985EF0-BAA9-43A7-BB7E-4CB9095A165D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D985EF0-BAA9-43A7-BB7E-4CB9095A165D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D985EF0-BAA9-43A7-BB7E-4CB9095A165D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C30B421-1B06-4BD7-8503-0CF0E6810682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C30B421-1B06-4BD7-8503-0CF0E6810682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C30B421-1B06-4BD7-8503-0CF0E6810682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C30B421-1B06-4BD7-8503-0CF0E6810682}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
