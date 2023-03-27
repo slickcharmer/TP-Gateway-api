@@ -25,7 +25,7 @@ namespace BusinessLogicLayer
             return _repo.GetAllDoctors();
         }
 
-        public IEnumerable<Doctor> GetByEmail(string email)
+        Doctor IDoctorLogic.GetByEmail(string email)
         {
             return _repo.GetDoctorByEmail(email);
         }

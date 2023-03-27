@@ -15,17 +15,27 @@ namespace PatientFluentApi
             return context.PatientLogins;
         }
 
-        public void Add(PatientLogin patientLogin)
+        public string Add(PatientLogin patientLogin)
         {
             try
             {
-                context.PatientLogins.Add(patientLogin);
-                context.SaveChanges();
+                var user = context.PatientLogins.Where(p=>p.Email == patientLogin.Email).Any();
+                if (user)
+                {
+                    return "-1";
+                }
+                else
+                {
+                    context.PatientLogins.Add(patientLogin);
+                    context.SaveChanges();
+                    return "1";
+                }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
+            return "-1";
         }
 
         public void Update(PatientLogin patientLogin)
