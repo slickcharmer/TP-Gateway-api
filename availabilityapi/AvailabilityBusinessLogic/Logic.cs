@@ -16,7 +16,15 @@ namespace BusinessLogic
 
         public void AddSchedule(DoctorSchedule doctorSchedule)
         {
-            repo.Add(doctorSchedule);
+            bool exists = repo.Get().Where(s => s.DoctorId == doctorSchedule.DoctorId).Any();
+            if (!exists)
+            {
+                repo.Add(doctorSchedule);
+            }
+            else
+            {
+                throw new Exception("Schedule already exists");
+            }
         }
 
 
