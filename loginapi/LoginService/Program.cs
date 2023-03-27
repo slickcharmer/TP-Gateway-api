@@ -18,7 +18,7 @@ builder.Services.AddSwaggerGen();
 
 
 //var obj = builder.Configuration.GetConnectionString("LoginDB");
-builder.Services.AddDbContext<PhysicianAvailabilityServiceDbContext>(options => options.UseSqlServer("Server=doctor-availability-server.database.windows.net,1433;Initial Catalog=AvailabilitySchedule;Persist Security Info=False;User ID=Srinu;Password=Doctor@123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
+builder.Services.AddDbContext<PhysicianAvailabilityServiceDbContext>(options => options.UseSqlServer("Server=tcp:physicianavailabilityservice.database.windows.net,1433;Initial Catalog=PhysicianAvailabilityServiceDb;Persist Security Info=False;User ID=Srinu;Password=Password123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
 
 builder.Services.AddScoped<IRepo<PatientLogin>, Repo>();
 builder.Services.AddScoped<ILogic, Logic>();

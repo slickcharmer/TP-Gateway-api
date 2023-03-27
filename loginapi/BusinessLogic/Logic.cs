@@ -15,8 +15,9 @@ namespace BusinessLogic
         {
             Guid guid= Guid.NewGuid();
             patientLogin.LoginId = guid.ToString();
-            repo.Add(patientLogin);
-            return patientLogin;
+            var res = repo.Add(patientLogin);
+            if (res == "1") return patientLogin;
+            else return null;
         }
 
         public PatientLogin UpdatePatient(PatientLogin patientLogin) 

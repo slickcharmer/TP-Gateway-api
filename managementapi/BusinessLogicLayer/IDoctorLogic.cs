@@ -10,7 +10,7 @@ namespace BusinessLogicLayer
     {
         string AddDoctor(DataLayer.Entities.Doctor doctor);
         IEnumerable<DataLayer.Entities.Doctor> GetById(Guid id);
-        IEnumerable<DataLayer.Entities.Doctor> GetByEmail(string email);
+        DataLayer.Entities.Doctor GetByEmail(string email);
         IEnumerable<DataLayer.Entities.Doctor> GetAll();
     }
 }
