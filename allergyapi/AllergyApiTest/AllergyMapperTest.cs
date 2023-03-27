@@ -4,7 +4,6 @@ using FluentAssertions;
 using AllergyServiceApi.Controllers;
 using BusinessLogic;
 using Models;
-using Microsoft.AspNetCore.Mvc;
 using df = DataFluentApi;
 
 
