@@ -26,7 +26,7 @@ namespace AllergyServiceApi.Controllers
             }
             else
             {
-                return BadRequest();
+                return BadRequest(details);
             }
         }
 
