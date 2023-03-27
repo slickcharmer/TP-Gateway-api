@@ -1,4 +1,4 @@
-﻿using DataLogic.Entities;
+﻿using PIDataLogic.Entities;
 using Models;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ namespace BuisnessLogic
         public IEnumerable<PatientInfo> GetallPatientinfos();
         public IEnumerable<PatientInfo> GetPatientDetailsByemail(string Email);
        
-       public void AddnewPatientInfo(Patientinfo patientInfo);
+       public string AddnewPatientInfo(Patientinfo patientInfo);
         public PatientInfo updatePatientinfos(Guid Pat_id, Patientinfo patientinfo);
 
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace DataLogic.Entities;
+namespace PIDataLogic.Entities;
 
 public partial class PatientInfoServiceDbContext : DbContext
 {
@@ -17,28 +17,34 @@ public partial class PatientInfoServiceDbContext : DbContext
 
     public virtual DbSet<Patientinfo> Patientinfos { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer("Server=tcp:patientinfoservice.database.windows.net,1433;Initial Catalog=PatientInfoServiceDb; User ID=Prasanna;Password=Admin123;");
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Server=tcp:patientinfoservice.database.windows.net,1433;Initial Catalog=PatientInfoServiceDb;Persist Security Info=False;User ID=Prasanna;Password=Admin123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Patientinfo>(entity =>
         {
-            entity.HasKey(e => e.PatId).HasName("PK__Patienti__B0CC418803C25EA3");
+            entity.HasKey(e => e.PatId).HasName("PK__Patienti__B0CC4188D73A8C42");
 
             entity.ToTable("Patientinfo", "PIS");
 
             entity.Property(e => e.PatId)
                 .ValueGeneratedNever()
                 .HasColumnName("Pat_id");
-            entity.Property(e => e.Adress)
+            entity.Property(e => e.AdressLine)
                 .HasMaxLength(50)
                 .IsUnicode(false)
-                .HasColumnName("adress");
+                .HasColumnName("adress_line");
             entity.Property(e => e.Age).HasColumnName("age");
-            entity.Property(e => e.Country)
+            entity.Property(e => e.City)
                 .HasMaxLength(25)
                 .IsUnicode(false)
-                .HasColumnName("country");
+                .HasColumnName("city");
+            entity.Property(e => e.Created)
+                .HasMaxLength(15)
+                .IsUnicode(false)
+                .HasColumnName("created");
             entity.Property(e => e.Email)
                 .HasMaxLength(50)
                 .IsUnicode(false)

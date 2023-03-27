@@ -14,22 +14,29 @@ namespace DataLayer
         {
             try
             {
+                bool flag = false;
                 if (nurse != null)
                 {
-                    _context.Add(nurse);
-                    _context.SaveChanges();
-                    return "1";
+                    if(_context.Nurses.Where(n=>n.Email== nurse.Email).Any()) flag = true;
+                    else flag= false;
+                    if (flag == false)
+                    {
+                        _context.Add(nurse);
+                        _context.SaveChanges();
+                        return "1";
+                    }
+                    else return "-1";
                 }
                 else
                 {
-                    return "-1";
+                    return "-2";
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
-            return "-1";
+            return "-2";
         }
 
         public IEnumerable<Nurse> GetAllNurse()

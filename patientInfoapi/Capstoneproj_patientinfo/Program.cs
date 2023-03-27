@@ -1,6 +1,6 @@
 using BuisnessLogic;
 using DataLogic;
-using DataLogic.Entities;
+using PIDataLogic.Entities;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

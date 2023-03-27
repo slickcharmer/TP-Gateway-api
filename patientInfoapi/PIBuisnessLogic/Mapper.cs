@@ -1,5 +1,5 @@
 ﻿using Models;
-using DataLogic.Entities;
+using PIDataLogic.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +20,10 @@ namespace BuisnessLogic
             Email= patientInfo.Email,
             Pasword= patientInfo.Pasword,
             Phone= patientInfo.Phone,
-            Adress= patientInfo.Adress, 
+            AdressLine = patientInfo.AdressLine, 
             State= patientInfo.State,   
-            Country= patientInfo.Country,
+            City = patientInfo.City,
+            Created = patientInfo.Created,
             };
         }
          public Patientinfo PatientInfo(PatientInfo patientInfo) {
@@ -34,9 +35,10 @@ namespace BuisnessLogic
             Email= patientInfo.Email,
             Pasword= patientInfo.Pasword,
             Phone= patientInfo.Phone,
-            Adress= patientInfo.Adress, 
+            AdressLine = patientInfo.AdressLine, 
             State= patientInfo.State,
-            Country= patientInfo.Country,
+            City = patientInfo.City,
+            Created = patientInfo.Created,
             };
         }
     }

@@ -1,5 +1,5 @@
 ﻿using BuisnessLogic;
-using DataLogic.Entities;
+using PIDataLogic.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Models;
@@ -59,9 +59,9 @@ namespace Capstoneproj_patientinfo.Controllers
             try
             {
                 patientinfo.PatId = Guid.NewGuid();
-                logic.AddnewPatientInfo(patientinfo);
-                return Created("Added",patientinfo);
-
+                string res = logic.AddnewPatientInfo(patientinfo);
+                if(res == "1") return Created("Added", patientinfo);
+                else return BadRequest(res);
             }
             catch (SqlException ex)
             {
@@ -80,7 +80,7 @@ namespace Capstoneproj_patientinfo.Controllers
             {
 
                var response= logic.updatePatientinfos(Pat_id, patientinfo);
-                return Created("Added", patientinfo);
+               return Created("Added", patientinfo);
 
             }
             catch (SqlException ex)

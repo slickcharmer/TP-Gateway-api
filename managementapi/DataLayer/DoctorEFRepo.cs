@@ -14,23 +14,28 @@ namespace DataLayer
         {
             try
             {
+                bool flag = false;
                 if (doctor != null)
                 {
-                    _context.Add(doctor);
-                    _context.SaveChanges();
-                    return "1";
+                    if (_context.Doctors.Where(n => n.Email == doctor.Email).Any()) flag = true;
+                    if(flag == false)
+                    {
+                        _context.Add(doctor);
+                        _context.SaveChanges();
+                        return "1";
+                    }
+                    else return "-1";
                 }
                 else
                 {
-                    return "-1";
+                    return "-2";
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
-            return "-1";
-            
+            return "-2";
         }
 
         public IEnumerable<Doctor> GetAllDoctors()
