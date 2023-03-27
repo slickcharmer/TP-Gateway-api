@@ -39,5 +39,19 @@ namespace BusinessLogic
 
             };
         }
+
+        public AppointmentModel MapEntityToModel(dl.Appointment _appointment)
+        {
+            return new AppointmentModel()
+            {
+                AppointmentId = _appointment.AppointmentId,
+                PatientId = _appointment.PatientId,
+                Date = _appointment.Date,
+                DoctorId = _appointment.DoctorId,
+                NurseId = _appointment.NurseId,
+                Status = _appointment.Status,
+
+            };
+        }
     }
 }

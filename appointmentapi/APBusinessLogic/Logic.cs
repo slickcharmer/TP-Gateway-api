@@ -36,22 +36,22 @@ namespace BusinessLogic
             return repo.GetAppointmentsByStatusOne();
         }
 
-        public Appointment UpdateNurseIdByNurse(Guid id, string nurse_id)
+        public AppointmentModel UpdateNurseIdByNurse(Guid id, string nurse_id)
         {
             var service = repo.UpdateNurseIdByNurse(id);
             service.NurseId= nurse_id;
-            return repo.UpdateNurseIdByNurse(service);
-            
+            return map.MapEntityToModel(repo.UpdateNurseIdByNurse(service));
+
         }
 
-        public dl.Appointment UpdateStatusByDoctor(Guid id, short status)
+        public AppointmentModel UpdateStatusByDoctor(Guid id, short status)
         {
             var service = repo.UpdateStatusByDoctor(id);
 
             service.Status = status;
 
-            
-            return repo.UpdateStatusByDoctor(service);
+
+            return map.MapEntityToModel(repo.UpdateStatusByDoctor(service));
         }
     }
 }
