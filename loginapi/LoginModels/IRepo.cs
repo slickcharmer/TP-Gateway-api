@@ -11,7 +11,7 @@ namespace Models
 
         public IEnumerable<T> Get();
 
-        public void Add(T patientLogin);
+        public string Add(T patientLogin);
 
         public void Update(T patientLogin);
 

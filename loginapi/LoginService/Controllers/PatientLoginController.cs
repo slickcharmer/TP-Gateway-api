@@ -44,7 +44,8 @@ namespace LoginService.Controllers
             try
             {
                 var patient = logic.AddPatient(patientLogin);
-                return CreatedAtAction("Add", patient);
+                if (patient != null) return CreatedAtAction("Add", patient);
+                else return Ok(StatusCodes.Status302Found);
             }
             catch (SqlException ex)
             {

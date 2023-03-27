@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer;
+using DataLayer.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -48,9 +49,9 @@ namespace DNApi.Controllers
                 {
                     return Ok(res);
                 }
-                else
+                else if (res == null)
                 {
-                    return BadRequest();
+                    return Ok(StatusCodes.Status404NotFound);
                 }
             }
             catch (Exception ex)

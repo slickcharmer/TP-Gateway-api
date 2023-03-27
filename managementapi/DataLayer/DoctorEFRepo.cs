@@ -1,4 +1,5 @@
 ﻿using DataLayer.Entities;
+using System.Numerics;
 
 namespace DataLayer
 {
@@ -64,25 +65,23 @@ namespace DataLayer
             return null;
         }
 
-        public IEnumerable<Doctor> GetDoctorByEmail(string email)
+        public Doctor GetDoctorByEmail(string email)
         {
             try
             {
-                var doc = _context.Doctors;
-                var res = (from d in doc
-                           where d.Email == email
-                           select new DataLayer.Entities.Doctor
-                           {
-                               Id = d.Id,
-                               Name = d.Name,
-                               Email = d.Email,
-                               Gender = d.Gender,
-                               Specialization = d.Specialization,
-                               ImgUrl = d.ImgUrl,
-                               Experience = d.Experience,
-                               PhoneNo = d.PhoneNo
-                           });
-                return res.ToList();
+                bool flag = false;
+                if (email != null)
+                {
+                    var doc = _context.Doctors.Where(n => n.Email == email).FirstOrDefault();
+                    if (doc != null) { 
+                        flag = true;
+                        return doc;
+                    }
+                    if (flag == false) return doc;
+                    else return null;
+                }
+                else return null;
+                
             }
             catch (Exception e)
             {

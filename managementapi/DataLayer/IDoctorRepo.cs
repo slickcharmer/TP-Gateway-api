@@ -10,7 +10,7 @@ namespace DataLayer
     {
         string AddDoctor(DataLayer.Entities.Doctor doctor);
         IEnumerable<DataLayer.Entities.Doctor> GetDoctorById(Guid id);
-        IEnumerable<DataLayer.Entities.Doctor> GetDoctorByEmail(string email);
+        DataLayer.Entities.Doctor GetDoctorByEmail(string email);
         IEnumerable<DataLayer.Entities.Doctor> GetAllDoctors();
     }
 }
