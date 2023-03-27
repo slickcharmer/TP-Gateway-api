@@ -39,6 +39,30 @@ namespace DataLayer
             return "-2";
         }
 
+        public string Delete(string email)
+        {
+            try
+            {
+                var doc = _context.Doctors.Where(d => d.Email == email).FirstOrDefault();
+                if (doc != null)
+                {
+                    _context.Remove(doc);
+                    _context.SaveChanges();
+                    return "1";
+                }
+                else
+                {
+                    return "-1";
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return "-1";
+            
+        }
+
         public IEnumerable<Doctor> GetAllDoctors()
         {
             try

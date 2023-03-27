@@ -34,5 +34,10 @@ namespace BusinessLogicLayer
         {
             return _repo.GetDoctorById(id);
         }
+
+        public string DeleteDoctor(string email)
+        {
+            return _repo.Delete(email);
+        }
     }
 }

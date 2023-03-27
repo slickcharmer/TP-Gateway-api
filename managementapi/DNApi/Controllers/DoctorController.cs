@@ -103,5 +103,21 @@ namespace DNApi.Controllers
             }
             return BadRequest();
         }
+
+        [HttpDelete("deleteDoctor/{email}")]
+        public IActionResult Delete([FromRoute] string email)
+        {
+            try
+            {
+                var res = _logic.DeleteDoctor(email);
+                if (res == "1") return Ok(StatusCodes.Status204NoContent);
+                else if (res == "-1") return Ok(StatusCodes.Status400BadRequest);
+                else return BadRequest();
+            }catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return BadRequest();
+        }
     }
 }
