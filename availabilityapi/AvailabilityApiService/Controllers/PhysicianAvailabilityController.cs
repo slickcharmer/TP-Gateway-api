@@ -28,10 +28,6 @@ namespace AvailabilityApiService.Controllers
                 else
                     return BadRequest("No schedules found");
             }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
-            }
 
             catch (Exception ex)
             {
@@ -47,10 +43,6 @@ namespace AvailabilityApiService.Controllers
             {
                 logic.AddSchedule(doctorSchedule);
                 return CreatedAtAction("Add", doctorSchedule);
-            }
-            catch(SqlException ex)
-            {
-                return BadRequest(ex.Message);
             }
             catch(Exception ex)
             {
@@ -71,10 +63,6 @@ namespace AvailabilityApiService.Controllers
                 }
                 else
                     return BadRequest("Null data couldn't be updated");
-            }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {

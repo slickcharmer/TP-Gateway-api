@@ -2,6 +2,7 @@
 using BusinessLogic;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
+using Models;
 using Moq;
 using Service.Controllers;
 using System;
@@ -91,6 +92,21 @@ namespace PHRServiceTest
             result.Should().BeAssignableTo<OkObjectResult>();
             result.As<OkObjectResult>().Value.Should().NotBeNull().And.BeOfType(hr.GetType());
             mlogic.Verify(x => x.UpdateHealthR(id, hr), Times.AtLeastOnce());
+        }
+
+        [Fact]
+        public void UpdateHealthRecord_PHRService_BadRequest()
+        {
+            //Arrange
+            var id = (string)null;
+            var patientTest = new Patient_Health_Record();
+
+            //Act
+            var response = c1.UpdateHealthRecord(id, patientTest);
+
+            //Assert
+            response.Should().NotBeNull().And.BeAssignableTo<BadRequestObjectResult>().Which.Value.Should().Be(id);
+
         }
     }
 }

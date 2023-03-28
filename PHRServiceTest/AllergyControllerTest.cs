@@ -71,7 +71,7 @@ namespace PHRServiceTest
         }
 
         [Fact]
-        public void UpdateAllergyRecord_PHRService_BadRequest()
+        public void UpdateAllergyRecord_PHRService_Exception()
         {
             var request = fixture.Create<Patient_Allergy>();
             var id = fixture.Create<string>();
@@ -82,6 +82,21 @@ namespace PHRServiceTest
             result.Should().NotBeNull();
             result.Should().BeAssignableTo<BadRequestObjectResult>();
             mockLogic.Verify(x => x.UpdatePA(id, request), Times.AtLeastOnce());
+        }
+
+        [Fact]
+        public void UpdateAllergyRecord_PHRService_BadRequest()
+        {
+            //Arrange
+            var id = (string)null;
+            var patientTest = new Patient_Allergy();
+
+            //Act
+            var response = controller.UpdateAllergyRecord(id, patientTest);
+
+            //Assert
+            response.Should().NotBeNull().And.BeAssignableTo<BadRequestObjectResult>().Which.Value.Should().Be(id);
+
         }
     }
 }

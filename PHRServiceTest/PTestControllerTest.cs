@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using PHRModels;
 using Models;
 using Azure;
+using Azure.Core;
 
 namespace PHRServiceTest
 {
@@ -74,7 +75,7 @@ namespace PHRServiceTest
         }
 
         [Fact]
-        public void modifyTest_PHRService_BadRequest()
+        public void modifyTest_PHRService_Exception()
         {
             var request = fixture.Create<Patient_Test>();
             var id = fixture.Create<string>();
@@ -85,6 +86,20 @@ namespace PHRServiceTest
             result.Should().NotBeNull();
             result.Should().BeAssignableTo<BadRequestObjectResult>();
             mockLogic.Verify(x => x.UpdatePatientTest(id, request), Times.AtLeastOnce());
+        }
+
+        [Fact]
+        public void modifyTest_PHRService_BadRequest()
+        {   
+            //Arrange
+            var id = (string)null;
+            var patientTest = new Patient_Test();
+            
+            //Act
+            var response = controller.UpdateTestRecord(id,patientTest);
+
+            //Assert
+            response.Should().NotBeNull().And.BeAssignableTo<BadRequestObjectResult>().Which.Value.Should().Be(id);
         }
     }
 }

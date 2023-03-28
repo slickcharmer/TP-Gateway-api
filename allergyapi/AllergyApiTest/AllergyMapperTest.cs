@@ -26,5 +26,21 @@ namespace AllergyApiTest
             var result = Mapper.Map(map);
             Assert.Equal(result.GetType(),typeof(df.Entities.Allergy));
         }
+
+        [Fact]
+        public void Map_ReturnsCorrectType()
+        {
+            // Arrange
+            var allergyEntities = new List<DataFluentApi.Entities.Allergy>
+            {
+                new DataFluentApi.Entities.Allergy { AllergyId = Guid.NewGuid(), AllergyName = "Peanuts" },
+            };
+
+            // Act
+            var result = Mapper.Map(allergyEntities);
+
+            // Assert
+            Assert.IsType<List<Allergy>>(result.ToList());
+        }
     }
 }
