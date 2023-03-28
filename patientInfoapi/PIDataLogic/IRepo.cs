@@ -12,6 +12,8 @@ namespace DataLogic
     {
         public IEnumerable<PatientInfo> GetallPatientinfos();
         public IEnumerable<PatientInfo> GetPatientinfosbyemail(string Email);
+
+        public PatientInfo GetPatientinfosbyId(Guid id);
         public string AddnewPatientInfo(Patientinfo patientinfo);
         public PatientInfo updatePatientinfos( Guid Pat_id, Patientinfo patientinfo);
     }
