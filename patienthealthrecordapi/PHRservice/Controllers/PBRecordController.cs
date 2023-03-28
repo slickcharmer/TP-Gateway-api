@@ -48,11 +48,7 @@ namespace Service.Controllers
                 if (search.Count() > 0)
                     return Ok(search);
                 else
-                    return NotFound($"Records with PatientId {id} not available, please try with different Id");
-            }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
+                    return NotFound(search);
             }
             catch (Exception ex)
             {
@@ -69,10 +65,6 @@ namespace Service.Controllers
                 r.Id = Guid.NewGuid();
                 var add = _logic.AddBasicR(r);
                 return CreatedAtAction("Add", add);
-            }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
             }
             catch (Exception e)
             {
@@ -91,11 +83,7 @@ namespace Service.Controllers
                     return Ok(r);
                 }
                 else
-                    return BadRequest($"something wrong with {Id}, please try again!");
-            }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
+                    return BadRequest(Id);
             }
             catch (Exception ex)
             {
