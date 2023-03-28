@@ -578,3 +578,4 @@ obj/
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,dotnetcore,csharp,aspnetcore,angular
+/.dockerignore

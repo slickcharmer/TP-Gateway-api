@@ -77,6 +77,33 @@ namespace DataLogic
 
         }
 
+        public PatientInfo GetPatientinfosbyId(Guid id)
+        {
+            var patient = _context.Patientinfos;
+            var patient_info = (
+                from pr in patient
+                where pr.PatId == id
+                select new PatientInfo()
+                {
+                    PatId = pr.PatId,
+                    Fullname = pr.Fullname,
+                    Age = pr.Age,
+                    Gender = pr.Gender,
+                    Email = pr.Email,
+                    Pasword = pr.Pasword,
+                    Phone = pr.Phone,
+                    AdressLine = pr.AdressLine,
+                    City = pr.City,
+                    State = pr.State,
+                    Created = pr.Created
+                }
+
+                );
+            return patient_info.First();
+
+
+        }
+
         public PatientInfo updatePatientinfos(Guid Pat_id, Patientinfo patientinfo)
         {
             PatientInfo info = new PatientInfo() ;
