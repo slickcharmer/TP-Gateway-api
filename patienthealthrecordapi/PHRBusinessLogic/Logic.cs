@@ -135,6 +135,7 @@ namespace BusinessLogic
             if (s != null)
             {
                 s.Drug = record.Drugs;
+                s.Quantity = record.Quantity;
                 s.HealthId = record.Health_Id;
 
                 s = _repo.UpdateMedication(s);

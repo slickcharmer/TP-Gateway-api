@@ -81,7 +81,8 @@ namespace BusinessLogic
                 Id = mr.Id,
                 Health_Id = mr.HealthId,
                 Appointment_Id = mr.AppointmentId,
-                Drugs = mr.Drug
+                Drugs = mr.Drug,
+                Quantity = mr.Quantity
             };
         }
 
@@ -92,7 +93,8 @@ namespace BusinessLogic
                 Id = mr.Id,
                 HealthId = mr.Health_Id,
                 AppointmentId = mr.Appointment_Id,
-                Drug = mr.Drugs
+                Drug = mr.Drugs,
+                Quantity = mr.Quantity
             };
         }
         public static Models.Patient_Test TMap(PatientTest tm)

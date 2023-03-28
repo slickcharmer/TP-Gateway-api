@@ -94,6 +94,7 @@ namespace EntityFrame
                                Health_Id = m.HealthId,
                                AppointmentId = h.AppointmentId,
                                Drugs = m.Drug,
+                               Quantity = m.Quantity,
                                Test = t.Test,
                                Result = t.Result,
                                Conclusion = h.Conclusion
