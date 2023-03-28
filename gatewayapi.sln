@@ -73,8 +73,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuditService", "auditapi\Au
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllergyApiTest", "allergyapi\AllergyApiTest\AllergyApiTest.csproj", "{5D985EF0-BAA9-43A7-BB7E-4CB9095A165D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PHRServiceTest", "PHRServiceTest\PHRServiceTest.csproj", "{6C30B421-1B06-4BD7-8503-0CF0E6810682}"
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentService_Test", "appointmentapi\AppointmentService_Test\AppointmentService_Test.csproj", "{1A55DEDD-400C-4F99-B2ED-C12AB7FC2DAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PHRServiceTest", "PHRServiceTest\PHRServiceTest.csproj", "{6C30B421-1B06-4BD7-8503-0CF0E6810682}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentService_Test", "appointmentapi\AppointmentService_Test\AppointmentService_Test.csproj", "{1A55DEDD-400C-4F99-B2ED-C12AB7FC2DAC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F7D455DE-F357-42BA-AE0C-569E58E333B4}"
+	ProjectSection(SolutionItems) = preProject
+		sonarcloud.yml = sonarcloud.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
