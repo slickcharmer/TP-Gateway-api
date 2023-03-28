@@ -28,6 +28,11 @@ namespace BuisnessLogic
             return _repo.GetPatientinfosbyemail(Email);
         }
 
+        public PatientInfo GetPatientDetailsById(Guid id)
+        {
+            return _repo.GetPatientinfosbyId(id);
+        }
+
         public PatientInfo updatePatientinfos(Guid Pat_id, Patientinfo patientinfo)
         {
             return _repo.updatePatientinfos(Pat_id, patientinfo);

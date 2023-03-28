@@ -204,6 +204,18 @@
       ]
     },
     {
+      "UpstreamPathTemplate": "/apigateway/PatientById/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/PatientInfo/GetPatientInfobyId/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7112
+        }
+      ]
+    },
+    {
       "UpstreamPathTemplate": "/apigateway/AddPatient",
       "UpstreamHttpMethod": [ "POST" ],
       "DownstreamPathTemplate": "/api/PatientInfo/AddnewPatientinfo",

@@ -53,6 +53,27 @@ namespace Capstoneproj_patientinfo.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpGet("GetPatientInfobyId/{id}")]
+
+        public IActionResult GetPatientInfobyId([FromRoute] Guid id)
+        {
+            try
+            {
+                var response = logic.GetPatientDetailsById(id);
+                return Ok(response);
+
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpPost("AddnewPatientinfo")]
         public IActionResult PostPatientInfo([FromBody] Patientinfo patientinfo)
         {
