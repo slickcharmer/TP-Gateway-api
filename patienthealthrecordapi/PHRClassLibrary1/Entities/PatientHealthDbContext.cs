@@ -81,7 +81,7 @@ public partial class PatientHealthDbContext : DbContext
 
         modelBuilder.Entity<PatientMedication>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__PatientM__3214EC078E5ADDEC");
+            entity.HasKey(e => e.Id).HasName("PK__PatientM__3214EC074336E7B0");
 
             entity.ToTable("PatientMedication");
 
