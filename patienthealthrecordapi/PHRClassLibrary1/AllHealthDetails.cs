@@ -20,6 +20,7 @@ namespace EntityFrame
         public string Conclusion { get; set; }
         public string Health_Id { get; set; }
         public string Drugs { get; set; }
+        public string Quantity { get; set; }
         public string Test { get; set; }
         public string Result { get; set; }
 

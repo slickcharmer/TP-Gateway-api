@@ -49,7 +49,8 @@ namespace Service.Controllers
                 if (search.Count() > 0)
                     return Ok(search);
                 else
-                    return NotFound($"Records with HealthId {id} not available, please try with different Id");
+                    return BadRequest(search);
+                    //return NotFound($"Records with HealthId {id} not available, please try with different Id");
             }
             catch (SqlException ex)
             {
@@ -69,7 +70,7 @@ namespace Service.Controllers
             {
                 r.Id = Guid.NewGuid();
                 var add = _logic.AddHealthR(r);
-                return CreatedAtAction("Add", add);
+                return Ok(add);
             }
             catch (SqlException ex)
             {
