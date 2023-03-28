@@ -74,7 +74,7 @@ namespace PHRServiceTest
         }
 
         [Fact]
-        public void updatemedication_PHRService_BadRequest()
+        public void updatemedication_PHRService_Exception()
         {
             var request = fixture.Create<Patient_Basic_Record>();
             var id = fixture.Create<string>();
@@ -86,5 +86,21 @@ namespace PHRServiceTest
             result.Should().BeAssignableTo<BadRequestObjectResult>();
             mockLogic.Verify(x => x.UpdateBR(id, request), Times.AtLeastOnce());
         }
+
+        [Fact]
+        public void updatemedication_PHRService_BadRequest()
+        {
+            //Arrange
+            var id = (string)null;
+            var patientTest = new Patient_Basic_Record();
+
+            //Act
+            var response = controller.UpdateBasicRecord(id, patientTest);
+
+            //Assert
+            response.Should().NotBeNull().And.BeAssignableTo<BadRequestObjectResult>().Which.Value.Should().Be(id);
+
+        }
+
     }
 }

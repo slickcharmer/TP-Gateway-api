@@ -1,4 +1,5 @@
-﻿public partial class Doctor
+﻿namespace DataLayer.Entities;
+public partial class Doctor
 {
     public Guid Id { get; set; }
 
