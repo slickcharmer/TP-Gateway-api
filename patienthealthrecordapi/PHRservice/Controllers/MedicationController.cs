@@ -24,10 +24,6 @@ namespace Service.Controllers
                 var add = _logic.AddMedicalReport(r);
                 return CreatedAtAction("Add", add);
             }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
-            }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
@@ -45,11 +41,7 @@ namespace Service.Controllers
                     return Ok(r);
                 }
                 else
-                    return BadRequest($"something wrong with {Id}, please try again!");
-            }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
+                    return BadRequest(Id);
             }
             catch (Exception ex)
             {

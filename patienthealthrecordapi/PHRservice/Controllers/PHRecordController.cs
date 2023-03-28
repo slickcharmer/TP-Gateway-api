@@ -52,10 +52,6 @@ namespace Service.Controllers
                     return BadRequest(search);
                     //return NotFound($"Records with HealthId {id} not available, please try with different Id");
             }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
-            }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -71,10 +67,6 @@ namespace Service.Controllers
                 r.Id = Guid.NewGuid();
                 var add = _logic.AddHealthR(r);
                 return Ok(add);
-            }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
             }
             catch (Exception e)
             {
@@ -93,11 +85,7 @@ namespace Service.Controllers
                     return Ok(r);
                 }
                 else
-                    return BadRequest($"something wrong with {Id}, please try again!");
-            }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
+                    return BadRequest(Id);
             }
             catch (Exception ex)
             {
