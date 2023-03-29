@@ -95,7 +95,7 @@ namespace AppointmentService_API.Controllers
 
         }
 
-        [HttpGet("GetAppointmentsByDoctorId")]
+        [HttpGet("GetAppointmentsByNurseId")]
         public IActionResult GetAppointmentsByNurseId(string nurse_id)
         {
             try

@@ -71,8 +71,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuditService", "auditapi\Au
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllergyApiTest", "allergyapi\AllergyApiTest\AllergyApiTest.csproj", "{5D985EF0-BAA9-43A7-BB7E-4CB9095A165D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PHRServiceTest", "PHRServiceTest\PHRServiceTest.csproj", "{6C30B421-1B06-4BD7-8503-0CF0E6810682}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentService_Test", "appointmentapi\AppointmentService_Test\AppointmentService_Test.csproj", "{1A55DEDD-400C-4F99-B2ED-C12AB7FC2DAC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F7D455DE-F357-42BA-AE0C-569E58E333B4}"
@@ -82,11 +80,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatientLoginTest", "loginapi\PatientLoginTest\PatientLoginTest.csproj", "{49F850F6-15A8-4B2A-A8AA-F701AC7AB54B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditServiceTest", "AuditServiceTest\AuditServiceTest.csproj", "{E0935F3C-4DE5-4B48-B263-492B2DA60711}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NurseServiceTest", "managementapi\NurseServiceTest\NurseServiceTest.csproj", "{00C92282-EEE1-45F1-A141-EC0F526B0DA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NurseServiceTest", "managementapi\NurseServiceTest\NurseServiceTest.csproj", "{00C92282-EEE1-45F1-A141-EC0F526B0DA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NurseModels", "managementapi\NurseModels\NurseModels.csproj", "{0147E011-4E09-43EF-A99D-3529DC611A4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NurseModels", "managementapi\NurseModels\NurseModels.csproj", "{0147E011-4E09-43EF-A99D-3529DC611A4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PHRServiceTest", "patienthealthrecordapi\PHRServiceTest\PHRServiceTest.csproj", "{A7E110D4-5932-4191-BB36-E32015D296B5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuditServiceTest", "auditapi\AuditServiceTest\AuditServiceTest.csproj", "{8B2C75EA-CDE7-4F0C-AADC-13A246FF8978}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -230,10 +230,6 @@ Global
 		{5D985EF0-BAA9-43A7-BB7E-4CB9095A165D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D985EF0-BAA9-43A7-BB7E-4CB9095A165D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D985EF0-BAA9-43A7-BB7E-4CB9095A165D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6C30B421-1B06-4BD7-8503-0CF0E6810682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C30B421-1B06-4BD7-8503-0CF0E6810682}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C30B421-1B06-4BD7-8503-0CF0E6810682}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C30B421-1B06-4BD7-8503-0CF0E6810682}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1A55DEDD-400C-4F99-B2ED-C12AB7FC2DAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1A55DEDD-400C-4F99-B2ED-C12AB7FC2DAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A55DEDD-400C-4F99-B2ED-C12AB7FC2DAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -242,10 +238,6 @@ Global
 		{49F850F6-15A8-4B2A-A8AA-F701AC7AB54B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49F850F6-15A8-4B2A-A8AA-F701AC7AB54B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49F850F6-15A8-4B2A-A8AA-F701AC7AB54B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E0935F3C-4DE5-4B48-B263-492B2DA60711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E0935F3C-4DE5-4B48-B263-492B2DA60711}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E0935F3C-4DE5-4B48-B263-492B2DA60711}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E0935F3C-4DE5-4B48-B263-492B2DA60711}.Release|Any CPU.Build.0 = Release|Any CPU
 		{00C92282-EEE1-45F1-A141-EC0F526B0DA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{00C92282-EEE1-45F1-A141-EC0F526B0DA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00C92282-EEE1-45F1-A141-EC0F526B0DA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -254,6 +246,14 @@ Global
 		{0147E011-4E09-43EF-A99D-3529DC611A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0147E011-4E09-43EF-A99D-3529DC611A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0147E011-4E09-43EF-A99D-3529DC611A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7E110D4-5932-4191-BB36-E32015D296B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7E110D4-5932-4191-BB36-E32015D296B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7E110D4-5932-4191-BB36-E32015D296B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7E110D4-5932-4191-BB36-E32015D296B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B2C75EA-CDE7-4F0C-AADC-13A246FF8978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B2C75EA-CDE7-4F0C-AADC-13A246FF8978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B2C75EA-CDE7-4F0C-AADC-13A246FF8978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B2C75EA-CDE7-4F0C-AADC-13A246FF8978}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
