@@ -106,13 +106,13 @@ namespace AuditServiceTest
         }
         [Fact]
         public void getAll_Auditservice_ExceptionTest() 
-        { 
+        {
 
-            mlogic.Setup(x => x.GetAllAudits()).Throws(new Exception("Something wrong with the request"));
+            IEnumerable<Audit> response = null;
+            mlogic.Setup(x => x.GetAllAudits()).Returns(response);
 
             var result = controller.GetAll();
 
-            result.Should().NotBeNull();
             result.Should().BeAssignableTo<BadRequestObjectResult>();
             mlogic.Verify(x => x.GetAllAudits(), Times.AtLeastOnce());
         }
