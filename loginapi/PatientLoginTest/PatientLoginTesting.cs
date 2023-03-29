@@ -48,7 +48,7 @@ namespace PatientLoginTest
         [Fact]
         public void GetPatient_PatientLoginController_BadRequest()
         {
-            var email = "geff@gmail.com";
+            var email = fixture.Create<string>();
             var password = fixture.Create<string>();
             mockLogic.Setup(x => x.GetPatient(email, password)).Throws(new Exception("Something wrong"));
 
