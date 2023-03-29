@@ -64,9 +64,16 @@ namespace Service.Controllers
         {
             try
             {
-                r.Id = Guid.NewGuid();
-                var add = _logic.AddHealthR(r);
-                return Ok(add);
+                if (r != null)
+                {
+                    r.Id = Guid.NewGuid();
+                    var add = _logic.AddHealthR(r);
+                    return Ok(add);
+                }
+                else
+                {
+                    return BadRequest(r);
+                }
             }
             catch (Exception e)
             {

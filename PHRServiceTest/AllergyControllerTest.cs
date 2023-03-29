@@ -51,6 +51,18 @@ namespace PHRServiceTest
             result.Should().BeAssignableTo<BadRequestObjectResult>();
             mockLogic.Verify(x => x.AddAllergyReport(request), Times.AtLeastOnce());
         }
+        [Fact]
+        public void AddAllergy_PHRService_Exception()
+        {
+            var request = fixture.Create<Patient_Allergy>();
+            mockLogic.Setup(x => x.AddAllergyReport(request)).Throws(new Exception("Something wrong with the request"));
+
+            var result = controller.Add(request);
+
+            result.Should().NotBeNull();
+            result.Should().BeAssignableTo<BadRequestObjectResult>();
+            mockLogic.Verify(x => x.AddAllergyReport(request), Times.AtLeastOnce());
+        }
 
         [Fact]
         public void UpdateAllergyRecord_PHRService_OkRequest()
