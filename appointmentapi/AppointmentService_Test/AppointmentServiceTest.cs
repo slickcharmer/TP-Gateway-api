@@ -84,6 +84,19 @@ namespace AppointmentService_Test
 
         }
 
+        [Fact]
+        public void GetAppointmentsByStatusOne_AppointmentService_Exception()
+        {
+            var email = fixture.Create<AppointmentModel>();
+            var password = fixture.Create<AppointmentModel>();
+            mockLogic.Setup(x => x.GetAppointmentsByStatusOne()).Throws(new Exception("Something wrong"));
+
+            var result = controller.GetAppointmentsByStatusOne();
+
+            result.Should().NotBeNull();
+            result.Should().BeAssignableTo<BadRequestObjectResult>();
+            mockLogic.Verify(x => x.GetAppointmentsByStatusOne(), Times.AtLeastOnce());
+        }
 
         [Fact]
         public void GetAppointmentsByDoctorId_AppointmentService_OkResponse()
@@ -143,6 +156,21 @@ namespace AppointmentService_Test
 
         }
 
+        [Fact]
+        public void GetAppointmentsByDoctorId_AppointmentService_Exception()
+        {
+
+            var id = fixture.Create<string>();
+            mockLogic.Setup(x => x.GetAppointmentsByDoctorId(id)).Throws(new Exception("Something wrong"));
+
+            var result = controller.GetAppointmentsByDoctorId(id);
+
+            result.Should().NotBeNull();
+            result.Should().BeAssignableTo<BadRequestObjectResult>();
+            mockLogic.Verify(x => x.GetAppointmentsByDoctorId(id), Times.AtLeastOnce());
+
+        }
+
 
         [Fact]
         public void AddAppointment_AppointmentService_OkResponse()
@@ -151,24 +179,12 @@ namespace AppointmentService_Test
             var request = fixture.Create<AppointmentModel>();
             var response = fixture.Create<AppointmentModel>();
             mockLogic.Setup(x => x.AddAppointmentByPatient(request));
-
             // Act
-
             var result = controller.AddAppointment(request);
-
-
             // Assert
-
             result.Should().NotBeNull();
-
-
-
             result.Should().BeAssignableTo<OkObjectResult>();
-
-
             mockLogic.Verify(x => x.AddAppointmentByPatient(request), Times.AtLeastOnce());
-
-
         }
 
         [Fact]
@@ -460,5 +476,20 @@ namespace AppointmentService_Test
 
 
         }
+
+        [Fact]
+        public void GetAppointmentsByStatus_AppointmentService_Exception()
+        {
+            var id = fixture.Create<short>();
+            mockLogic.Setup(x => x.GetAppointmentsByStatus(id)).Throws(new Exception("Something wrong"));
+
+            var result = controller.GetAppointmentsByStatus(id);
+
+            result.Should().NotBeNull();
+            result.Should().BeAssignableTo<BadRequestObjectResult>();
+            mockLogic.Verify(x => x.GetAppointmentsByStatus(id), Times.AtLeastOnce());
+
+        }
+
     }
 }

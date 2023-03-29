@@ -14,13 +14,13 @@ namespace BusinessLogic
         {
             return new Models.Patient_Basic_Record()
             {
-                Id = (Guid)r.Id,
-                Date_Time = (DateTime)r.DateTime,
+                Id = (Guid?)r.Id,
+                Date_Time = (DateTime?)r.DateTime,
                 Patient_Id = r.PatientId,
                 Nurse_Id = r.NurseId,
                 Appointment_Id = r.AppointmentId,
                 Bp = r.Bp,
-                Heart_Rate = (int)r.HeartRate,
+                Heart_Rate = (int?)r.HeartRate,
                 SpO2 = r.SpO2,
                 Height = r.Height,
                 Weight = r.Weight,
@@ -39,7 +39,7 @@ namespace BusinessLogic
                 PatientId = r.Patient_Id,
                 NurseId = r.Nurse_Id,
                 AppointmentId = r.Appointment_Id,
-                Bp = Validation.IsValidBP(r.Bp),
+                Bp = r.Bp,
                 HeartRate = r.Heart_Rate,
                 SpO2 = r.SpO2,
                 Height = r.Height,
@@ -53,8 +53,8 @@ namespace BusinessLogic
         {
             return new Models.Patient_Health_Record()
             {
-                Id = (Guid)hr.Id,
-                Date_Time = (DateTime)hr.DateTime,
+                Id= (Guid?)hr.Id,
+                Date_Time = (DateTime?)hr.DateTime,
                 Patient_Id = hr.PatientId,
                 Doctor_Id = hr.DoctorId,
                 Appointment_Id = hr.AppointmentId,

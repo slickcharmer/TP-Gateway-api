@@ -27,10 +27,6 @@ namespace LoginService.Controllers
                 if(result == "1") return Ok(result);
                 else return BadRequest(result);
             }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
-            }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -47,10 +43,6 @@ namespace LoginService.Controllers
                 if (patient != null) return CreatedAtAction("Add", patient);
                 else return Ok(StatusCodes.Status302Found);
             }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
-            }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -66,10 +58,6 @@ namespace LoginService.Controllers
                 var patient = logic.UpdatePatient(patientLogin);
                 return Ok(patient);
             }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
-            }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -84,10 +72,6 @@ namespace LoginService.Controllers
             {
                 var patient = logic.DeletePatient(email);
                 return Ok(patient);
-            }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {
