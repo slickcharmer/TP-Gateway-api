@@ -42,6 +42,28 @@ namespace DataLayer
             return doctor_det.ToList(); 
         }
 
+        public IEnumerable<AppointmentModel> GetAppointmentsByNurseId(string nurse_id)
+        {
+            var nurse = context.Appointments;
+            var nurse_det = (
+                from nr in nurse
+                where nr.NurseId == nurse_id
+                select new AppointmentModel()
+                {
+                    AppointmentId = nr.AppointmentId,
+                    PatientId = nr.PatientId,
+                    DoctorId = nr.DoctorId,
+                    NurseId = nr.NurseId,
+                    Status = nr.Status,
+                    Date = nr.Date,
+
+
+
+                }
+                );
+            return nurse_det.ToList();
+        }
+
         public IEnumerable<AppointmentModel> GetAppointmentsByStatus(short status)
         {
             var _status = context.Appointments;
