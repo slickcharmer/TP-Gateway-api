@@ -232,6 +232,20 @@ namespace DoctorServiceTest
         }
 
         [Fact]
+        public void Add_Exception_Test()
+        {
+            //Arrange
+            var request = fixture.Create<DataLayer.Entities.Doctor>();
+            mockLogic.Setup(x => x.AddDoctor(request)).Throws(new Exception("Something wrong with the request"));
+            var result = controller.Add(request);
+
+
+            result.Should().NotBeNull();
+            result.Should().BeAssignableTo<BadRequestObjectResult>();
+            mockLogic.Verify(x => x.AddDoctor(request), Times.AtLeastOnce());
+        }
+
+        [Fact]
         public void Delete_Test_Created()
         {
             var request = fixture.Create<string>();
