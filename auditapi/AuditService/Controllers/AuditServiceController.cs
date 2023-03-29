@@ -29,7 +29,7 @@ namespace AuditService.Controllers
                 }
                 else
                 {
-                    return NoContent();
+                    return BadRequest(audits);
                 }
             }
             catch (Exception ex)
