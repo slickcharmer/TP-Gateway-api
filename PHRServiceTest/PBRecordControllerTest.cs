@@ -93,7 +93,7 @@ namespace PHRServiceTest
         }
 
         [Fact]
-        public void AddMedicalRecords_PHRService_BadRequest()
+        public void AddBasicRecords_PBRService_BadRequest()
         {
             var request = fixture.Create<Patient_Basic_Record>();
             mockLogic.Setup(x => x.AddBasicR(request)).Throws(new Exception("Something wrong with the request"));
@@ -105,7 +105,7 @@ namespace PHRServiceTest
             mockLogic.Verify(x => x.AddBasicR(request), Times.AtLeastOnce());
         }
         [Fact]
-        public void AddMedicalRecprd_PBRService_Exception()
+        public void AddBasicRecprd_PBRService_Exception()
         {
             var request = fixture.Create<Patient_Basic_Record>();
             mockLogic.Setup(x => x.AddBasicR(request)).Throws(new Exception("Something wrong with the request"));
@@ -118,7 +118,7 @@ namespace PHRServiceTest
         }
 
         [Fact]
-        public void updatemedication_PHRService_OkRequest()
+        public void update_PBRService_OkRequest()
         {
             var request = fixture.Create<Patient_Basic_Record>();
             var id = fixture.Create<string>();

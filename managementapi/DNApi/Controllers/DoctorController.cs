@@ -28,14 +28,13 @@ namespace DNApi.Controllers
                 }
                 else
                 {
-                    return BadRequest();
+                    return BadRequest(res);
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                return BadRequest(e);
             }
-            return BadRequest();
         }
 
         //done
@@ -49,16 +48,15 @@ namespace DNApi.Controllers
                 {
                     return Ok(res);
                 }
-                else if (res == null)
+                else
                 {
-                    return Ok(StatusCodes.Status404NotFound);
+                    return BadRequest(res);
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                return BadRequest(ex);
             }
-            return BadRequest();
         }
 
         //done
@@ -74,14 +72,13 @@ namespace DNApi.Controllers
                 }
                 else
                 {
-                    return BadRequest();
+                    return BadRequest(res);
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                return BadRequest(e);
             }
-            return BadRequest();
         }
 
         //done
@@ -99,9 +96,8 @@ namespace DNApi.Controllers
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                return BadRequest(e);
             }
-            return BadRequest();
         }
 
         [HttpDelete("deleteDoctor/{email}")]
@@ -115,9 +111,8 @@ namespace DNApi.Controllers
                 else return BadRequest();
             }catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                return BadRequest(e);
             }
-            return BadRequest();
         }
     }
 }

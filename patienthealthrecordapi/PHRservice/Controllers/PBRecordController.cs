@@ -9,7 +9,7 @@ namespace Service.Controllers
     [ApiController]
     public class PBRecordController : ControllerBase
     {
-        ILogic _logic;
+        private readonly ILogic _logic;
         public PBRecordController(ILogic logic)
         {
             _logic = logic;
