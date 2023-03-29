@@ -19,6 +19,7 @@ namespace DataLayer
 
         public dl.Appointment UpdateNurseIdByNurse(Guid id);
         public IEnumerable<AppointmentModel> GetAppointmentsByDoctorId(string doctor_id);
+        public IEnumerable<AppointmentModel> GetAppointmentsByNurseId(string nurse_id);
         public IEnumerable<AppointmentModel> GetAppointmentsByStatus(short status);
         public IEnumerable<AppointmentModel> GetAppointmentsByStatusOne();
 

@@ -26,6 +26,11 @@ namespace BusinessLogic
             return repo.GetAppointmentsByDoctorId(doctor_id);
         }
 
+        public IEnumerable<AppointmentModel> GetAppointmentsByNurseId(string nurse_id)
+        {
+            return repo.GetAppointmentsByNurseId(nurse_id);
+        }
+
         public IEnumerable<AppointmentModel> GetAppointmentsByStatus(short status)
         {
             return repo.GetAppointmentsByStatus(status);
