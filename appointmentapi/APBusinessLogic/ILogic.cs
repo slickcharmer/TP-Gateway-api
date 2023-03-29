@@ -14,6 +14,7 @@ namespace BusinessLogic
         public AppointmentModel UpdateStatusByDoctor(Guid id, short status);
         public AppointmentModel UpdateNurseIdByNurse(Guid id, string nurse_id);
         public IEnumerable<AppointmentModel> GetAppointmentsByDoctorId(string doctor_id);
+        public IEnumerable<AppointmentModel> GetAppointmentsByNurseId(string nurse_id);
         public IEnumerable<AppointmentModel> GetAppointmentsByStatus(short status);
         public IEnumerable<AppointmentModel> GetAppointmentsByStatusOne();
     }
