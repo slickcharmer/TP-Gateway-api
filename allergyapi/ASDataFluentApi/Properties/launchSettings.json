@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ASDataFluentApi": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:64219;http://localhost:64220"
+    }
+  }
+}

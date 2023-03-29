@@ -5,7 +5,8 @@ using AllergyServiceApi.Controllers;
 using BusinessLogic;
 using Models;
 using df = DataFluentApi;
-
+using Xunit;
+using DataFluentApi.Entities;
 
 namespace AllergyApiTest
 {
@@ -16,7 +17,7 @@ namespace AllergyApiTest
         {
             df.Entities.Allergy map = new df.Entities.Allergy();
             var result = Mapper.Map(map);
-            Assert.Equal(result.GetType(),typeof(Allergy));
+            Assert.Equal(result.GetType(),typeof(Models.Allergy));
         }
 
         [Fact]

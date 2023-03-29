@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DNApi", "managementapi\DNAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "managementapi\Models\Models.csproj", "{17218E45-746B-49FB-BAB2-A04C92A3C777}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "managementapi\Test\Test.csproj", "{1739D8A8-1767-44D1-8649-9583EECD43BF}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogic", "loginapi\BusinessLogic\BusinessLogic.csproj", "{295F2893-B238-4EA8-B4E3-03A8A89A5119}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoginModels", "loginapi\LoginModels\LoginModels.csproj", "{5037753D-6805-4103-A729-1AB3A5FB9D86}"
@@ -73,11 +71,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuditService", "auditapi\Au
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllergyApiTest", "allergyapi\AllergyApiTest\AllergyApiTest.csproj", "{5D985EF0-BAA9-43A7-BB7E-4CB9095A165D}"
 EndProject
-<<<<<<< HEAD
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PHRServiceTest", "PHRServiceTest\PHRServiceTest.csproj", "{6C30B421-1B06-4BD7-8503-0CF0E6810682}"
-=======
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentService_Test", "appointmentapi\AppointmentService_Test\AppointmentService_Test.csproj", "{1A55DEDD-400C-4F99-B2ED-C12AB7FC2DAC}"
->>>>>>> 55419448f1b82a39bd6247a9d9fabe4fec74e578
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PHRServiceTest", "PHRServiceTest\PHRServiceTest.csproj", "{6C30B421-1B06-4BD7-8503-0CF0E6810682}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentService_Test", "appointmentapi\AppointmentService_Test\AppointmentService_Test.csproj", "{1A55DEDD-400C-4F99-B2ED-C12AB7FC2DAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,10 +101,6 @@ Global
 		{17218E45-746B-49FB-BAB2-A04C92A3C777}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17218E45-746B-49FB-BAB2-A04C92A3C777}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17218E45-746B-49FB-BAB2-A04C92A3C777}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1739D8A8-1767-44D1-8649-9583EECD43BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1739D8A8-1767-44D1-8649-9583EECD43BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1739D8A8-1767-44D1-8649-9583EECD43BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1739D8A8-1767-44D1-8649-9583EECD43BF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{295F2893-B238-4EA8-B4E3-03A8A89A5119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{295F2893-B238-4EA8-B4E3-03A8A89A5119}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{295F2893-B238-4EA8-B4E3-03A8A89A5119}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -225,17 +217,14 @@ Global
 		{5D985EF0-BAA9-43A7-BB7E-4CB9095A165D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D985EF0-BAA9-43A7-BB7E-4CB9095A165D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D985EF0-BAA9-43A7-BB7E-4CB9095A165D}.Release|Any CPU.Build.0 = Release|Any CPU
-<<<<<<< HEAD
 		{6C30B421-1B06-4BD7-8503-0CF0E6810682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6C30B421-1B06-4BD7-8503-0CF0E6810682}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C30B421-1B06-4BD7-8503-0CF0E6810682}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C30B421-1B06-4BD7-8503-0CF0E6810682}.Release|Any CPU.Build.0 = Release|Any CPU
-=======
 		{1A55DEDD-400C-4F99-B2ED-C12AB7FC2DAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1A55DEDD-400C-4F99-B2ED-C12AB7FC2DAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A55DEDD-400C-4F99-B2ED-C12AB7FC2DAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A55DEDD-400C-4F99-B2ED-C12AB7FC2DAC}.Release|Any CPU.Build.0 = Release|Any CPU
->>>>>>> 55419448f1b82a39bd6247a9d9fabe4fec74e578
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
