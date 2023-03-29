@@ -1,12 +1,12 @@
 {
   "profiles": {
-    "PIDataLogic": {
+    "PHRBusinessLogic": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "https://localhost:64227;http://localhost:64228"
+      "applicationUrl": "https://localhost:64217;http://localhost:64218"
     }
   }
 }
