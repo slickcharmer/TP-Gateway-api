@@ -41,7 +41,7 @@ namespace AllergyApiTest
             var result = Mapper.Map(allergyEntities);
 
             // Assert
-            Assert.IsType<List<Allergy>>(result.ToList());
+            Assert.IsType<List<Models.Allergy>>(result.ToList());
         }
     }
 }
