@@ -54,6 +54,18 @@ namespace PHRServiceTest
             result.Should().BeAssignableTo<BadRequestObjectResult>();
             mockLogic.Verify(x => x.AddMedicalReport(request), Times.AtLeastOnce());
         }
+        [Fact]
+        public void Add_PMedical_Exception()
+        {
+            var request = fixture.Create<Patient_Medication>();
+            mockLogic.Setup(x => x.AddMedicalReport(request)).Throws(new Exception("Something wrong with the request"));
+
+            var result = controller.Add(request);
+
+            result.Should().NotBeNull();
+            result.Should().BeAssignableTo<BadRequestObjectResult>();
+            mockLogic.Verify(x => x.AddMedicalReport(request), Times.AtLeastOnce());
+        }
 
         [Fact]
         public void updatemedication_PHRService_OkRequest()
@@ -74,7 +86,7 @@ namespace PHRServiceTest
         }
 
         [Fact]
-        public void updatemedication_PHRService_BadRequest()
+        public void updatemedication_PHRService_Exception()
         {
             var request = fixture.Create<Patient_Medication>();
             var id = fixture.Create<string>();
@@ -85,6 +97,20 @@ namespace PHRServiceTest
             result.Should().NotBeNull();
             result.Should().BeAssignableTo<BadRequestObjectResult>();
             mockLogic.Verify(x => x.UpdateMedicalReport(id, request), Times.AtLeastOnce());
+        }
+
+        [Fact]
+        public void updatemedication_PHRService_BadRequest()
+        {
+            //Arrange
+            var id = (string)null;
+            var patientTest = new Patient_Medication();
+
+            //Act
+            var response = controller.UpdateMedicalRecord(id, patientTest);
+
+            //Assert
+            response.Should().NotBeNull().And.BeAssignableTo<BadRequestObjectResult>().Which.Value.Should().Be(id);
         }
     }
 }

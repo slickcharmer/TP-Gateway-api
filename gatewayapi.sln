@@ -75,6 +75,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PHRServiceTest", "PHRServic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentService_Test", "appointmentapi\AppointmentService_Test\AppointmentService_Test.csproj", "{1A55DEDD-400C-4F99-B2ED-C12AB7FC2DAC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F7D455DE-F357-42BA-AE0C-569E58E333B4}"
+	ProjectSection(SolutionItems) = preProject
+		sonarcloud.yml = sonarcloud.yml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatientLoginTest", "loginapi\PatientLoginTest\PatientLoginTest.csproj", "{49F850F6-15A8-4B2A-A8AA-F701AC7AB54B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditServiceTest", "AuditServiceTest\AuditServiceTest.csproj", "{E0935F3C-4DE5-4B48-B263-492B2DA60711}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NurseServiceTest", "managementapi\NurseServiceTest\NurseServiceTest.csproj", "{00C92282-EEE1-45F1-A141-EC0F526B0DA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NurseModels", "managementapi\NurseModels\NurseModels.csproj", "{0147E011-4E09-43EF-A99D-3529DC611A4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -225,6 +238,22 @@ Global
 		{1A55DEDD-400C-4F99-B2ED-C12AB7FC2DAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A55DEDD-400C-4F99-B2ED-C12AB7FC2DAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A55DEDD-400C-4F99-B2ED-C12AB7FC2DAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49F850F6-15A8-4B2A-A8AA-F701AC7AB54B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49F850F6-15A8-4B2A-A8AA-F701AC7AB54B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49F850F6-15A8-4B2A-A8AA-F701AC7AB54B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49F850F6-15A8-4B2A-A8AA-F701AC7AB54B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0935F3C-4DE5-4B48-B263-492B2DA60711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0935F3C-4DE5-4B48-B263-492B2DA60711}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0935F3C-4DE5-4B48-B263-492B2DA60711}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0935F3C-4DE5-4B48-B263-492B2DA60711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00C92282-EEE1-45F1-A141-EC0F526B0DA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00C92282-EEE1-45F1-A141-EC0F526B0DA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00C92282-EEE1-45F1-A141-EC0F526B0DA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00C92282-EEE1-45F1-A141-EC0F526B0DA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0147E011-4E09-43EF-A99D-3529DC611A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0147E011-4E09-43EF-A99D-3529DC611A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0147E011-4E09-43EF-A99D-3529DC611A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0147E011-4E09-43EF-A99D-3529DC611A4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

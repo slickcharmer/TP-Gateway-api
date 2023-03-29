@@ -31,11 +31,6 @@ namespace AppointmentService_API.Controllers
                 return Ok(appointment);
 
             }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
-
-            }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -55,10 +50,6 @@ namespace AppointmentService_API.Controllers
                 return Ok(response);
 
             }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
-            }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -74,10 +65,6 @@ namespace AppointmentService_API.Controllers
                 var response = logic.UpdateNurseIdByNurse(appointment_id, nurse_id);
                 return Ok(response);
 
-            }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {
@@ -101,9 +88,27 @@ namespace AppointmentService_API.Controllers
                     return BadRequest(response);
                 }
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
+            }
+
+        }
+
+        [HttpGet("GetAppointmentsByDoctorId")]
+        public IActionResult GetAppointmentsByNurseId(string nurse_id)
+        {
+            try
+            {
+                var response = logic.GetAppointmentsByNurseId(nurse_id);
+                if (response != null)
+                {
+                    return Ok(response);
+                }
+                else
+                {
+                    return BadRequest(response);
+                }
             }
             catch (Exception ex)
             {
@@ -128,10 +133,6 @@ namespace AppointmentService_API.Controllers
                     return BadRequest(response);
                 }
             }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
-            }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -154,10 +155,6 @@ namespace AppointmentService_API.Controllers
                     return BadRequest(response);
                 }
 
-            }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {

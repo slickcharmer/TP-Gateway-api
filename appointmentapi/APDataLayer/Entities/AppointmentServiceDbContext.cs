@@ -27,7 +27,7 @@ public partial class AppointmentServiceDbContext : DbContext
         {
             entity.HasKey(e => e.AppointmentId).HasName("Pk_Appointment");
 
-            entity.ToTable("Appointment");
+            entity.ToTable("Appointment", tb => tb.HasTrigger("status3"));
 
             entity.Property(e => e.AppointmentId)
                 .ValueGeneratedNever()
