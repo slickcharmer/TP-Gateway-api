@@ -95,7 +95,7 @@ namespace PHRServiceTest
         {
             Patient_Health_Record phrmock = null;
             var hr = fixture.Create<Models.Patient_Health_Record>();
-            mlogic.Setup(x => x.AddHealthR(hr)).Returns(phrmock); 
+            mlogic.Setup(x => x.AddHealthR(hr)).Throws(new Exception("Somthing went wrong")); 
 
             var result = c1.Add(hr);
 
