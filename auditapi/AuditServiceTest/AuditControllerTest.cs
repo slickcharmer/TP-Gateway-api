@@ -152,5 +152,17 @@ namespace AuditServiceTest
             result.Should().BeAssignableTo<BadRequestObjectResult>();
             mlogic.Verify(x => x.AddAudit(request), Times.AtLeastOnce());
         }
+        [Fact]
+        public void Add_AuditService_Nullbody_test()
+        {
+            Audit request = null;
+            mlogic.Setup(x => x.AddAudit(request)).Throws(new Exception("Something wrong with the request"));
+
+            var result = controller.Add(request);
+
+            result.Should().NotBeNull();
+            result.Should().BeAssignableTo<BadRequestObjectResult>();
+            
+        }
     }
 }
