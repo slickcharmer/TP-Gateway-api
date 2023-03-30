@@ -28,7 +28,7 @@ namespace DNApi.Controllers
                 }
                 else
                 {
-                    return BadRequest();
+                    return BadRequest(res);
                 }
             }
             catch (Exception e)
@@ -75,9 +75,8 @@ namespace DNApi.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                return BadRequest();
             }
-            return BadRequest();
         }
     }
 }
