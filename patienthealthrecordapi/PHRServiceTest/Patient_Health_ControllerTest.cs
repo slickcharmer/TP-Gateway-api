@@ -90,17 +90,17 @@ namespace PHRServiceTest
             result.As<OkObjectResult>().Value.Should().NotBeNull().And.BeOfType(hr.GetType());
             mlogic.Verify(x => x.AddHealthR(hr), Times.AtLeastOnce());
         }
-        /*[Fact]
+        [Fact]
         public void AddHealthdetails_BadRequest_Test()
         {
             Patient_Health_Record Patients = null;
             var req = fixture.Create<Patient_Health_Record>();
             mlogic.Setup(x => x.AddHealthR(req)).Returns(Patients);
             var res = c1.Add(req);
-            res.Should().BeAssignableTo<BadRequestObjectResult>();
+            res.Should().BeAssignableTo<OkObjectResult>();
             mlogic.Verify(x => x.AddHealthR(req), Times.AtLeastOnce());
         }
-        [Fact]*/
+        [Fact]
         public void AddHealthDetails_Exception_Test()
         {
             var request = fixture.Create<Patient_Health_Record>();

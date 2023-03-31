@@ -93,19 +93,14 @@ namespace DataLayer
         {
             try
             {
-                bool flag = false;
                 if (email != null)
                 {
                     var doc = _context.Doctors.Where(n => n.Email == email).FirstOrDefault();
-                    if (doc != null) { 
-                        flag = true;
+                    if (doc != null)
+                    {
                         return doc;
                     }
-                    if (flag == false) return doc;
-                    else return null;
                 }
-                else return null;
-                
             }
             catch (Exception e)
             {
@@ -113,6 +108,7 @@ namespace DataLayer
             }
             return null;
         }
+
 
         IEnumerable<DataLayer.Entities.Doctor> IDoctorRepo.GetDoctorById(Guid id)
         {
