@@ -64,7 +64,7 @@ namespace AuditService.Controllers
 
         public IActionResult Add([FromBody] Audit audit)
         {
-            if (audit is not null)
+            if (audit != null)
             {
                 try
                 {

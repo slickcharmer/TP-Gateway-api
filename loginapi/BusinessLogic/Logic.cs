@@ -23,8 +23,11 @@ namespace BusinessLogic
         public PatientLogin UpdatePatient(PatientLogin patientLogin) 
         {
             var oldPatient = repo.Get().Where(x => x.Email == patientLogin.Email).FirstOrDefault();
-            oldPatient.Password = patientLogin.Password;
-            repo.Update(oldPatient);
+            if (oldPatient != null)
+            {
+                oldPatient.Password = patientLogin.Password;
+                repo.Update(oldPatient);
+            }
             return oldPatient;
         }
 
