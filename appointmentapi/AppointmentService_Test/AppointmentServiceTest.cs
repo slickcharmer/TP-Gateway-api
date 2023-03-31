@@ -171,6 +171,79 @@ namespace AppointmentService_Test
 
         }
 
+        [Fact]
+        public void GetAppointmentsByNurseId_AppointmentService_OkResponse()
+        {
+            // Arrange
+
+            var appoinmentMock = fixture.Create<IEnumerable<AppointmentModel>>();
+            var id = fixture.Create<string>();
+            mockLogic.Setup(x => x.GetAppointmentsByNurseId(id)).Returns(appoinmentMock);
+
+            // Act
+
+            var result = controller.GetAppointmentsByNurseId(id);
+
+
+            // Assert
+
+            result.Should().NotBeNull();
+
+            //result.Should().BeAssignableTo<ActionResult<AppointmentModel>>();
+
+            result.Should().BeAssignableTo<OkObjectResult>();
+
+            result.As<OkObjectResult>().Value
+                .Should().NotBeNull()
+                .And.BeOfType(appoinmentMock.GetType());
+
+            mockLogic.Verify(x => x.GetAppointmentsByNurseId(id), Times.AtLeastOnce());
+
+
+        }
+
+        [Fact]
+        public void GetAppointmentsByNurseId_AppointmentService_BadRequestResponse()
+        {
+            // Arrange
+            IEnumerable<AppointmentModel> response = null;
+            var id = fixture.Create<string>();
+            mockLogic.Setup(x => x.GetAppointmentsByNurseId(id)).Returns(response);
+
+            // Act
+
+            var result = controller.GetAppointmentsByNurseId(id);
+
+
+            // Assert
+
+
+
+            result.Should().BeAssignableTo<BadRequestObjectResult>();
+
+
+
+
+            mockLogic.Verify(x => x.GetAppointmentsByNurseId(id), Times.AtLeastOnce());
+
+
+        }
+
+        [Fact]
+        public void GetAppointmentsByNurseId_AppointmentService_Exception()
+        {
+
+            var id = fixture.Create<string>();
+            mockLogic.Setup(x => x.GetAppointmentsByNurseId(id)).Throws(new Exception("Something wrong"));
+
+            var result = controller.GetAppointmentsByNurseId(id);
+
+            result.Should().NotBeNull();
+            result.Should().BeAssignableTo<BadRequestObjectResult>();
+            mockLogic.Verify(x => x.GetAppointmentsByNurseId(id), Times.AtLeastOnce());
+
+        }
+
 
         [Fact]
         public void AddAppointment_AppointmentService_OkResponse()
