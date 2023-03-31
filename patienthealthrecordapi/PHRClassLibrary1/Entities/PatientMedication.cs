@@ -14,6 +14,4 @@ public partial class PatientMedication
     public string? Drug { get; set; }
 
     public string? Quantity { get; set; }
-
-    public virtual PatientHealthRecord? Appointment { get; set; }
 }

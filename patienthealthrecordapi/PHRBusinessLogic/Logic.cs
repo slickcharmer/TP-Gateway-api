@@ -1,5 +1,7 @@
 ﻿using EntityFrame;
 using Models;
+using PHREntityFrame.Entities;
+using PHRModels;
 
 namespace BusinessLogic
 {
@@ -10,6 +12,12 @@ namespace BusinessLogic
         {
             _repo = repo;
         }
+
+       /* public IEnumerable<PHREntityFrame.Entities.PatientBasicRecord> GetAll(string id)
+        {
+            return _repo.GetDetailsById(id);
+        }*/
+
 
         public Patient_Basic_Record AddBasicR(Patient_Basic_Record record)
         {
@@ -170,5 +178,29 @@ namespace BusinessLogic
             return Mapper.TMap(s); ;
         }
 
+        public List<PatientHealthRecord> GetAllHR(string id)
+        {
+            return _repo.getHealthByPID(id);
+        }
+
+        public List<PatientBasicRecord> GetAllBR(string id)
+        {
+            return _repo.getBasicByPID(id);
+        }
+
+        public List<PatientTest> GetTRByAID(string id, string AID)
+        {
+            return _repo.getTestByPID(id, AID);
+        }
+
+        public List<PatientMedication> GetMRByAID(string id, string AID)
+        {
+            return _repo.getMedByPID(id, AID);  
+        }
+
+        public List<PatientAllergy> GetARByAID(string id, string AID)
+        {
+            return _repo.getAllergyByPID(id, AID);
+        }
     }
 }

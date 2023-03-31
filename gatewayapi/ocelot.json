@@ -290,6 +290,18 @@
       ]
     },
     {
+      "UpstreamPathTemplate": "/apigateway/GetAppointmentsByNurId/{nurse_id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Appointment/GetAppointmentsByNurseId?nurse_id={nurse_id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7155
+        }
+      ]
+    },
+    {
       "UpstreamPathTemplate": "/apigateway/GetAppointmentsByStatus/{status}",
       "UpstreamHttpMethod": [ "GET" ],
       "DownstreamPathTemplate": "/api/Appointment/GetAppointmentsByStatus?status={status}",
@@ -411,7 +423,7 @@
       "UpstreamPathTemplate": "/apigateway/UpdatePatientRecord/{id}",
       "UpstreamHttpMethod": [ "PUT" ],
       "DownstreamPathTemplate": "/api/PBRecord/modify/{id}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -437,11 +449,11 @@
       "UpstreamPathTemplate": "/apigateway/GetPatientHealthRecord/{id}",
       "UpstreamHttpMethod": [ "GET" ],
       "DownstreamPathTemplate": "/api/PHRecord/GetHR/{id}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5010
+          "Port": 7203
         }
       ]
     },
@@ -449,11 +461,11 @@
       "UpstreamPathTemplate": "/apigateway/AddPatientHealthRecord",
       "UpstreamHttpMethod": [ "POST" ],
       "DownstreamPathTemplate": "/api/PHRecord/AddPHRecords",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5010
+          "Port": 7203
         }
       ]
     },
@@ -493,6 +505,67 @@
         {
           "Host": "localhost",
           "Port": 5010
+        }
+      ]
+    },
+    // history
+    {
+      "UpstreamPathTemplate": "/apigateway/GetHR/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/History/GetAllHR/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7203
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/GetBR/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/History/GetAllBR/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7203
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/GetTRByAID/{id}/{AID}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/History/GetTR/{id}/{AID}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7203
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/GetMRByAID/{id}/{AID}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/History/GetMR/{id}/{AID}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7203
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/GetARByAID/{id}/{AID}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/History/GetAR/{id}/{AID}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7203
         }
       ]
     }

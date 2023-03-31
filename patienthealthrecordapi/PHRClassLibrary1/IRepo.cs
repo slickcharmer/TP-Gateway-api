@@ -5,11 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using PHREntityFrame;
 using PHREntityFrame.Entities;
+using PHRModels;
 
 namespace EntityFrame
 {
     public interface IRepo
     {
+        
+        List<PHREntityFrame.Entities.PatientBasicRecord> getBasicByPID(string id);
+        List<PHREntityFrame.Entities.PatientHealthRecord> getHealthByPID(string id);
+        List<PHREntityFrame.Entities.PatientTest> getTestByPID(string id, string AID);
+        List<PHREntityFrame.Entities.PatientMedication> getMedByPID(string id, string AID);
+        List<PHREntityFrame.Entities.PatientAllergy> getAllergyByPID(string id, string AID);
+
         PatientBasicRecord AddBRecord(PatientBasicRecord record);
         PatientHealthRecord AddHRecord(PatientHealthRecord record);
         PatientMedication AddMRecord(PatientMedication medication);

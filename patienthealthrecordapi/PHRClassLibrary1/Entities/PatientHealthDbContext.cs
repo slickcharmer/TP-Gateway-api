@@ -74,7 +74,9 @@ public partial class PatientHealthDbContext : DbContext
             entity.Property(e => e.AppointmentId)
                 .HasMaxLength(100)
                 .HasColumnName("Appointment_Id");
-            entity.Property(e => e.DateTime).HasColumnType("smalldatetime");
+            entity.Property(e => e.DateTime)
+                .HasMaxLength(40)
+                .IsUnicode(false);
             entity.Property(e => e.DoctorId).HasColumnName("Doctor_Id");
             entity.Property(e => e.PatientId).HasColumnName("Patient_Id");
         });
@@ -90,11 +92,6 @@ public partial class PatientHealthDbContext : DbContext
                 .HasMaxLength(100)
                 .HasColumnName("Appointment_Id");
             entity.Property(e => e.HealthId).HasColumnName("Health_Id");
-
-            entity.HasOne(d => d.Appointment).WithMany(p => p.PatientMedications)
-                .HasForeignKey(d => d.AppointmentId)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("Fk_patientmedication");
         });
 
         modelBuilder.Entity<PatientTest>(entity =>
@@ -108,11 +105,6 @@ public partial class PatientHealthDbContext : DbContext
                 .HasMaxLength(100)
                 .HasColumnName("Appointment_Id");
             entity.Property(e => e.HealthId).HasColumnName("Health_Id");
-
-            entity.HasOne(d => d.Appointment).WithMany(p => p.PatientTests)
-                .HasForeignKey(d => d.AppointmentId)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("Fk_patientTest");
         });
         modelBuilder.HasSequence<int>("SalesOrderNumber", "SalesLT");
 
