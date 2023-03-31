@@ -2,10 +2,10 @@
 {
     public class All
     {
-        public string? Patient_ID { get; set; }
-
-        public IEnumerable<Models.AllHealthDetails> HealthDetails { get; set; }
-        public IEnumerable<Models.AllBasicDetails> BasicDetails { get; set; }
-
+        public IEnumerable<Models.Patient_Basic_Record> Basics { get; set; }
+        public IEnumerable<Models.Patient_Health_Record> Detailed { get; set; }
+        public IEnumerable<Models.Patient_Test> Tests { get; set; }
+        public IEnumerable<Models.Patient_Medication> Drugs { get; set; }
+        public IEnumerable<Models.Patient_Allergy> Allergy { get; set; }
     }
 }

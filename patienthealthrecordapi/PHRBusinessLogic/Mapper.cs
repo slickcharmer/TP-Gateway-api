@@ -54,7 +54,7 @@ namespace BusinessLogic
             return new Models.Patient_Health_Record()
             {
                 Id= (Guid?)hr.Id,
-                Date_Time = (DateTime?)hr.DateTime,
+                Date_Time = hr.DateTime,
                 Patient_Id = hr.PatientId,
                 Doctor_Id = hr.DoctorId,
                 Appointment_Id = hr.AppointmentId,

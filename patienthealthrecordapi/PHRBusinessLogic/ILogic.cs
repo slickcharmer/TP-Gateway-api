@@ -5,11 +5,21 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using PHRModels;
 
 namespace BusinessLogic
 {
     public interface ILogic
     {
+        List<PHREntityFrame.Entities.PatientHealthRecord> GetAllHR(string id);
+        List<PHREntityFrame.Entities.PatientBasicRecord> GetAllBR(string id);
+        List<PHREntityFrame.Entities.PatientTest> GetTRByAID(string id, string AID);
+        List<PHREntityFrame.Entities.PatientMedication> GetMRByAID(string id, string AID);
+        List<PHREntityFrame.Entities.PatientAllergy> GetARByAID(string id, string AID);
+
+
+
+
         /// <summary>
         /// Method to Add
         /// </summary>

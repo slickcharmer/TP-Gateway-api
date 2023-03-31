@@ -40,8 +40,11 @@ namespace Service.Controllers
             }
         }*/
 
+        
+
+
         [HttpGet("GetHR/{id}")]
-        public ActionResult GetById([FromRoute] string id)
+        public ActionResult GetById([FromRoute] string? id)
         {
             try
             {
@@ -67,6 +70,9 @@ namespace Service.Controllers
                 if (r != null)
                 {
                     r.Id = Guid.NewGuid();
+                    /*string newDate = r.Date_Time.ToString();
+                    r.Date_Time = DateTime.ParseExact(newDate, "yyyy-MM-dd HH:mm:ss",
+                                       System.Globalization.CultureInfo.InvariantCulture);*/
                     var add = _logic.AddHealthR(r);
                     return Ok(add);
                 }

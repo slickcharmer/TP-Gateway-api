@@ -1,10 +1,12 @@
 ﻿using EntityFrame;
 using PHREntityFrame.Entities;
+using PHRModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PHRModels;
 
 namespace EntityFrame
 {
@@ -15,6 +17,78 @@ namespace EntityFrame
         {
             _PHdbcontext = pHdbcontext;
         }
+
+
+        public List<PHREntityFrame.Entities.PatientAllergy> getAllergyByPID(string id, string AID)
+        {
+            List<PHREntityFrame.Entities.PatientAllergy> list = new();
+            var br = _PHdbcontext.PatientAllergies;
+            var res = (from b in br
+                       where b.HealthId == id && b.AppointmentId == AID
+                       select b);
+            foreach (var item in res)
+            {
+                list.Add(item);
+            }
+            return res.ToList();
+        }
+
+        public List<PHREntityFrame.Entities.PatientBasicRecord> getBasicByPID(string id)
+        {
+            List<PHREntityFrame.Entities.PatientBasicRecord> list = new();
+            var br = _PHdbcontext.PatientBasicRecords;
+            var res = (from b in br
+                       where b.PatientId == id
+                       select b);
+            foreach (var item in res)
+            {
+                list.Add(item);
+            }
+            return res.ToList();
+        }
+
+        public List<PHREntityFrame.Entities.PatientMedication> getMedByPID(string id, string AID)
+        {
+            List<PHREntityFrame.Entities.PatientMedication> list = new();
+            var br = _PHdbcontext.PatientMedications;
+            var res = (from b in br
+                       where b.HealthId == id && b.AppointmentId == AID
+                       select b);
+            foreach (var item in res)
+            {
+                list.Add(item);
+            }
+            return res.ToList();
+        }
+
+        public List<PHREntityFrame.Entities.PatientTest> getTestByPID(string id, string AID)
+        {
+            List<PHREntityFrame.Entities.PatientTest> list = new();
+            var br = _PHdbcontext.PatientTests;
+            var res = (from b in br
+                       where b.HealthId == id && b.AppointmentId == AID
+                       select b);
+            foreach (var item in res)
+            {
+                list.Add(item);
+            }
+            return res.ToList();
+        }
+
+        public List<PHREntityFrame.Entities.PatientHealthRecord> getHealthByPID(string id)
+        {
+            List<PHREntityFrame.Entities.PatientHealthRecord> list = new();
+            var br = _PHdbcontext.PatientHealthRecords;
+            var res = (from b in br
+                       where b.PatientId == id
+                       select b);
+            foreach (var item in res)
+            {
+                list.Add(item);
+            }
+            return res.ToList();
+        }
+
 
         public PatientBasicRecord AddBRecord(PatientBasicRecord record)
         {
@@ -87,8 +161,9 @@ namespace EntityFrame
                            join t in pt on h.AppointmentId equals t.AppointmentId
                            select new AllHealthDetails()
                            {
+                               Conclusion = h.Conclusion,
                                Id = (Guid)h.Id,
-                               Date_Time = (DateTime)h.DateTime,
+                               Date_Time = h.DateTime,
                                Patient_Id = h.PatientId,
                                Doctor_Id = h.DoctorId,
                                Health_Id = m.HealthId,
@@ -97,7 +172,6 @@ namespace EntityFrame
                                Quantity = m.Quantity,
                                Test = t.Test,
                                Result = t.Result,
-                               Conclusion = h.Conclusion
                            });
             return alldata.ToList();
         }
@@ -161,5 +235,6 @@ namespace EntityFrame
             _PHdbcontext.SaveChanges();
             return test;
         }
+
     }
 }
