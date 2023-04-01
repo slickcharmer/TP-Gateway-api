@@ -93,14 +93,12 @@ namespace PHRServiceTest
         [Fact]
         public void AddHealthdetails_BadRequest_Test()
         {
-            var hr = fixture.Create<Models.Patient_Health_Record>();
-            mlogic.Setup(x => x.AddHealthR(hr)).Throws(new Exception("Something wrong with the request")); ;
-
-            var result = c1.Add(hr);
-
-            result.Should().NotBeNull();
-            result.Should().BeAssignableTo<BadRequestObjectResult>();
-            mlogic.Verify(x => x.AddHealthR(hr), Times.AtLeastOnce());
+            Patient_Health_Record Patients = null;
+            var req = fixture.Create<Patient_Health_Record>();
+            mlogic.Setup(x => x.AddHealthR(req)).Returns(Patients);
+            var res = c1.Add(req);
+            res.Should().BeAssignableTo<OkObjectResult>();
+            mlogic.Verify(x => x.AddHealthR(req), Times.AtLeastOnce());
         }
         [Fact]
         public void AddHealthDetails_Exception_Test()

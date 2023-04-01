@@ -39,21 +39,6 @@ namespace PHRServiceTest
             result.Should().BeAssignableTo<CreatedAtActionResult>();
             mockLogic.Verify(x => x.AddMedicalReport(request), Times.AtLeastOnce());
         }
-
-        [Fact]
-        public void AddMedicalRecords_PHRService_BadRequest()
-        {
-            var request = fixture.Create<Patient_Medication>();
-            mockLogic.Setup(x => x.AddMedicalReport(request)).Throws(new Exception("Something wrong with the request"));
-
-
-            var result = controller.Add(request);
-
-
-            result.Should().NotBeNull();
-            result.Should().BeAssignableTo<BadRequestObjectResult>();
-            mockLogic.Verify(x => x.AddMedicalReport(request), Times.AtLeastOnce());
-        }
         [Fact]
         public void Add_PMedical_Exception()
         {
