@@ -14,7 +14,21 @@ namespace PHRservice.Controllers
             _logic = logic;
         }
 
-        [HttpGet("GetAllHR/{id}")]
+        [HttpGet("GetCompleteHistory/{id}")]
+        public IActionResult GetAlls([FromRoute] string id)
+        {
+            var res = _logic.Alls(id);
+            return Ok(res);
+        }
+
+        [HttpGet("getBasics/{pid}/{aid}")]
+        public IActionResult GetBasics([FromRoute] string pid, [FromRoute] string aid)
+        {
+            var res = _logic.Basics(pid, aid);
+            return Ok(res);
+        }
+
+        /*[HttpGet("GetAllHR/{id}")]
         public IActionResult GetHR([FromRoute] string id)
         {
             var res = _logic.GetAllHR(id);
@@ -44,6 +58,6 @@ namespace PHRservice.Controllers
         {
             var res = _logic.GetARByAID(id, AID);
             return Ok(res);
-        }
+        }*/
     }
 }

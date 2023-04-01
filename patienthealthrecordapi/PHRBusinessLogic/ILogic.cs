@@ -11,6 +11,9 @@ namespace BusinessLogic
 {
     public interface ILogic
     {
+        List<PHRModels.All> Alls(string pid);
+        List<PHRModels.BasicsAll> Basics(string pid, string aid);
+
         List<PHREntityFrame.Entities.PatientHealthRecord> GetAllHR(string id);
         List<PHREntityFrame.Entities.PatientBasicRecord> GetAllBR(string id);
         List<PHREntityFrame.Entities.PatientTest> GetTRByAID(string id, string AID);
