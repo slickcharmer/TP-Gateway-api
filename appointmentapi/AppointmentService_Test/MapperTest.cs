@@ -54,5 +54,23 @@ namespace AppointmentService_Test
 
             Assert.Equal(typeof(AppointmentModel), actualresult.GetType());
         }
+
+        [Fact]
+        public void MapTest()
+        {
+            // Arrange
+
+            AppointmentModel model = new AppointmentModel();
+
+
+            // Act
+
+            var actualresult = map.MapUpdateAppointmentByDoctor(model);
+
+
+            // Assert
+
+            Assert.Equal(typeof(dl.Appointment), actualresult.GetType());
+        }
     }
 }
