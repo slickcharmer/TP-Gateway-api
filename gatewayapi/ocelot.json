@@ -568,6 +568,30 @@
           "Port": 7203
         }
       ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/GetCompleteInfo/ByPatientId/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/History/GetCompleteHistory/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7203
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/GetBasic/ByPatientId/ByAppointmentId/{id}/{aid}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/History/getBasics/{id}/{aid}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7203
+        }
+      ]
     }
   ],
   "GlobalConfiguration": {

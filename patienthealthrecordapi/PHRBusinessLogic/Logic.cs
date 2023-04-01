@@ -202,5 +202,15 @@ namespace BusinessLogic
         {
             return _repo.getAllergyByPID(id, AID);
         }
+
+        public List<All> Alls(string pid)
+        {
+            return _repo.GetAll(pid);
+        }
+
+        public List<BasicsAll> Basics(string pid, string aid)
+        {
+            return _repo.BasicsAlls(pid, aid);
+        }
     }
 }

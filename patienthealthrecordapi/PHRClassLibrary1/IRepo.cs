@@ -11,7 +11,8 @@ namespace EntityFrame
 {
     public interface IRepo
     {
-        
+        List<PHRModels.All> GetAll(string pid);
+        List<PHRModels.BasicsAll> BasicsAlls(string pid, string aid);
         List<PHREntityFrame.Entities.PatientBasicRecord> getBasicByPID(string id);
         List<PHREntityFrame.Entities.PatientHealthRecord> getHealthByPID(string id);
         List<PHREntityFrame.Entities.PatientTest> getTestByPID(string id, string AID);
