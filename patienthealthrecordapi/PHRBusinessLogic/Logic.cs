@@ -1,6 +1,7 @@
 ﻿using EntityFrame;
 using Models;
 using PHREntityFrame.Entities;
+using PHRModels;
 
 namespace BusinessLogic
 {
@@ -131,7 +132,7 @@ namespace BusinessLogic
                      select r).FirstOrDefault();
 
             var s = (from r in _repo.GetAllMedication()
-                     where r.AppointmentId == z.AppointmentId
+                     where r.AppointmentId == z.AppointmentId && r.Drug == record.Drugs
                      select r).FirstOrDefault();
             if (s != null)
             {
@@ -196,12 +197,12 @@ namespace BusinessLogic
             return _repo.getAllergyByPID(id, AID);
         }
 
-        public List<All> Alls(string pid)
+        List<All> ILogic.Alls(string pid)
         {
             return _repo.GetAll(pid);
         }
 
-        public List<BasicsAll> Basics(string pid, string aid)
+        List<BasicsAll> ILogic.Basics(string pid, string aid)
         {
             return _repo.BasicsAlls(pid, aid);
         }
