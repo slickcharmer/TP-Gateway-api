@@ -10,7 +10,7 @@ namespace BuisnessLogic
 {
     public  class Mapper
     {
-        public PatientInfo PatientInfo( Patientinfo patientInfo) {
+        public static PatientInfo PatientInfo( Patientinfo patientInfo) {
             return new PatientInfo()
             { 
             PatId= patientInfo.PatId,
@@ -26,7 +26,7 @@ namespace BuisnessLogic
             Created = patientInfo.Created,
             };
         }
-         public Patientinfo PatientInfo(PatientInfo patientInfo) {
+         public static Patientinfo PatientInfo(PatientInfo patientInfo) {
             return new Patientinfo() { 
             PatId= patientInfo.PatId,
             Fullname = patientInfo.Fullname,
