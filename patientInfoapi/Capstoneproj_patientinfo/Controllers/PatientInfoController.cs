@@ -25,10 +25,6 @@ namespace Capstoneproj_patientinfo.Controllers
                 return Ok(response);
 
             }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
-            }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -43,10 +39,6 @@ namespace Capstoneproj_patientinfo.Controllers
                 var response = logic.GetPatientDetailsByemail(Email);
                 return Ok(response);
 
-            }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {
@@ -64,10 +56,6 @@ namespace Capstoneproj_patientinfo.Controllers
                 return Ok(response);
 
             }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
-            }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -81,12 +69,8 @@ namespace Capstoneproj_patientinfo.Controllers
             {
                 patientinfo.PatId = Guid.NewGuid();
                 string res = logic.AddnewPatientInfo(patientinfo);
-                if(res == "1") return Created("Added", patientinfo);
+                if(res == "1") return CreatedAtAction("Added", patientinfo);
                 else return BadRequest(res);
-            }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {
@@ -101,12 +85,8 @@ namespace Capstoneproj_patientinfo.Controllers
             {
 
                var response= logic.updatePatientinfos(Pat_id, patientinfo);
-               return Created("Added", patientinfo);
+               return CreatedAtAction("Added", patientinfo);
 
-            }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {
