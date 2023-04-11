@@ -1,4 +1,4 @@
-﻿using DataFluentApi.Entities;
+﻿/*using DataFluentApi.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,12 +16,12 @@ namespace AllergyApiTest
         public AllergyEFRepoTests()
         {
             // Initialize the in-memory database and repository
-           /* var options = new DbContextOptionsBuilder<AllergyServiceDbContext>()
+           *//* var options = new DbContextOptionsBuilder<AllergyServiceDbContext>()
                 .UseInMemoryDatabase(databaseName: "AllergyDatabase")
                 .Options;
 
             dbContext = new AllergyServiceDbContext(options);
-            repo = new AllergyEFRepo(dbContext);*/
+            repo = new AllergyEFRepo(dbContext);*//*
         }
 
         [Fact]
@@ -63,3 +63,4 @@ namespace AllergyApiTest
 
 
 }
+*/

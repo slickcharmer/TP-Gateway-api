@@ -7,6 +7,7 @@ using PatientFluentApi;
 using LoginService.Controllers;
 using PatientFluentApi.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 
 namespace PatientLoginTest
 {
@@ -58,6 +59,22 @@ namespace PatientLoginTest
             result.Should().BeAssignableTo<BadRequestObjectResult>();
             mockLogic.Verify(x => x.GetPatient(email, password), Times.AtLeastOnce());
         }
+
+        [Fact]
+        public void GetPatient_InvalidResult_ReturnsBadRequest()
+        {
+            // Arrange
+            var invalidResult = "invalid_result";
+            mockLogic.Setup(x => x.GetPatient(It.IsAny<string>(), It.IsAny<string>())).Returns(invalidResult);
+
+            // Act
+            var result = controller.Get("test_email", "test_password");
+
+            // Assert
+            var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
+            Assert.Equal(invalidResult, badRequestResult.Value);
+        }
+
         [Fact]
         public void AddPatient_PatientLoginController_OkResponse()
         {
@@ -73,6 +90,22 @@ namespace PatientLoginTest
             result.Should().BeAssignableTo<CreatedAtActionResult>();
             mockLogic.Verify(x => x.AddPatient(request), Times.AtLeastOnce());
         }
+        [Fact]
+        public void Add_ReturnsOk()
+        {
+            // Arrange
+            var request = fixture.Create<PatientLogin>();
+            mockLogic.Setup(x => x.AddPatient(It.IsAny<PatientLogin>())).Returns(request);
+
+            // Act
+            var result = controller.Add(new PatientLogin());
+
+            // Assert
+            var okResult = Assert.IsType<CreatedAtActionResult>(result);
+            Assert.IsType<PatientLogin>(okResult.Value);
+
+        }
+
         [Fact]
         public void AddPatient_AvailabilityService_BadRequest()
         {
